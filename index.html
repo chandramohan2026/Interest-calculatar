@@ -1,1 +1,741 @@
-<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><title>Interest Calculator Pro</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0d47a1"><link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Interest Calc"><script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script><style>*{box-sizing:border-box;}body{font-family:Arial;margin:0;background:#eef3ff;padding-bottom:70px;}.topbar{background:linear-gradient(135deg,#0d3fb0,#1550c9);color:#fff;padding:18px 18px 34px 18px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;}.topbar-left{display:flex;align-items:center;gap:14px;}.hamburger{font-size:24px;line-height:1;cursor:pointer;}.app-title{font-size:21px;font-weight:800;}.app-welcome{font-size:14px;color:#ffcb3d;margin-top:4px;font-weight:600;}.menu-dots{font-size:22px;letter-spacing:2px;cursor:pointer;}.page{display:none;}.page.active{display:block;}.calc-card{    max-width:520px;margin:-20px auto 15px auto;background:white;position:relative;z-index:20;    padding:24px 20px;border-radius:22px;box-shadow:0 6px 20px rgba(20,40,90,0.12);}.field-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}.field-icon{width:44px;height:44px;min-width:44px;border-radius:12px;background:#1550c9;display:flex;align-items:center;justify-content:center;color:#fff;}.field-content{flex:1;min-width:0;}label{font-size:15px;color:#1a2540;font-weight:700;display:block;margin-bottom:6px;}input,select{width:100%;padding:12px;margin:0;border:1.5px solid #dfe6f2;border-radius:10px;font-size:14.5px;background:#fbfcfe;}.rate-pills{display:flex;gap:8px;overflow-x:auto;margin:10px 0 4px 0;padding-bottom:2px;}.rate-pill{flex:0 0 auto;padding:10px 16px;border-radius:10px;border:1.5px solid #dfe6f2;background:#fff;color:#1550c9;font-weight:700;font-size:13.5px;cursor:pointer;}.rate-pill.active{background:#1550c9;color:#fff;border-color:#1550c9;}button{    width:100%;padding:14px;margin-top:8px;    border:none;border-radius:12px;    background:#1976d2;color:white;font-size:15px;font-weight:700;}.calc-btn{background:linear-gradient(90deg,#2fa84f,#1c8236);font-size:16px;letter-spacing:0.5px;}.secondary{background:#444;}.feature-row{max-width:520px;margin:0 auto 15px auto;background:#f3f6fc;border-radius:18px;display:flex;padding:20px 8px;}.feature-item{flex:1;text-align:center;}.feature-circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px auto;}.feature-title{font-weight:700;font-size:12.5px;color:#1a2540;}.feature-sub{font-size:10.5px;color:#8892a6;margin-top:2px;}.result-card{max-width:520px;margin:15px auto;background:#eaf3ff;border-radius:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.08);}.result-card-header{background:#0d47a1;color:#fff;padding:12px 16px;font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px;}.result-body{padding:16px;}.result-row{display:flex;justify-content:space-between;padding:4px 0;font-size:14px;color:#14395e;}.result-row b{font-weight:700;}.result-divider{border-top:1px solid #c9d6e8;margin:8px 0;}.result-section-title{color:#b5171e;font-weight:700;margin:10px 0 6px 0;text-align:center;font-size:14px;}.result-thanks{text-align:center;color:#0d47a1;font-weight:700;margin-top:14px;font-size:13px;line-height:1.6;}.result-datetime{display:flex;justify-content:space-between;font-size:12.5px;color:#4a5a72;margin-bottom:8px;}.action-row{display:flex;gap:8px;padding:0 16px 16px 16px;}.action-row button{flex:1;font-size:12px;padding:12px 4px;margin-top:0;border-radius:10px;}.pdf-btn{background:#c62828;}.wa-btn{background:#2e7d32;}.save-btn{background:#37474f;}.history-header{background:#0d47a1;color:#fff;padding:14px 16px;font-weight:700;display:flex;align-items:center;gap:10px;margin:15px;border-radius:8px;font-size:15px;}.history-list{padding:0 15px 15px 15px;}.history-card{background:#fff;border:1px solid #e2e8f2;border-radius:10px;padding:14px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06);display:flex;justify-content:space-between;gap:10px;}.history-card-main{flex:1;min-width:0;}.history-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#0d47a1;font-weight:700;font-size:14px;}.history-row{display:flex;gap:16px;font-size:12.5px;color:#333;margin-bottom:4px;flex-wrap:wrap;}.history-row span b{color:#14395e;}.history-actions{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;}.history-icon-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:10px;font-weight:800;}.history-empty{text-align:center;color:#888;padding:50px 20px;font-size:14px;}.history-clear{text-align:center;margin:0 15px 5px 15px;}.history-clear a{color:#c62828;font-size:13px;text-decoration:underline;cursor:pointer;}.about-card{max-width:520px;margin:20px auto;background:#fff;border-radius:10px;padding:24px 20px;text-align:center;}.about-card h3{color:#0d47a1;margin-bottom:4px;}.about-card p{color:#4a5a72;font-size:13.5px;line-height:1.7;}.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0d47a1;display:flex;z-index:80;box-shadow:0 -2px 8px rgba(0,0,0,0.15);padding:6px;gap:4px;}.nav-item{flex:1;text-align:center;padding:9px 0 9px 0;color:#a9c3ec;font-size:11px;cursor:pointer;border-radius:14px;font-weight:600;}.nav-item svg{display:block;margin:0 auto 3px auto;}.nav-item.active{color:#0d47a1;background:#ffffff;}</style></head><body><div class="topbar"><div class="topbar-left"><span class="hamburger">☰</span><div><div class="app-title">Interest Calculator Pro</div><div class="app-welcome">Welcome, CHANDRAMOHAN SINGH 👋</div></div></div><span class="menu-dots">⋮</span></div><!-- ===== CALCULATOR PAGE ===== --><div id="page-calculator" class="page active"><div class="calc-card"><div class="field-row"><div class="field-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="field-content"><label>From Date</label><input type="date" id="from"></div></div><div class="field-row"><div class="field-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="field-content"><label>To Date</label><input type="date" id="to"></div></div><div class="field-row"><div class="field-icon" style="font-weight:800;font-size:18px;">₹</div><div class="field-content"><label>Principal (₹)</label><input type="number" id="principal" placeholder="Enter Principal Amount"></div></div><div class="field-row"><div class="field-icon" style="font-weight:800;font-size:16px;">%</div><div class="field-content"><label>Rate (Monthly %)</label><select id="rate" style="display:none;"><option value="1">1%</option><option value="1.5">1.5%</option><option value="2">2%</option><option value="2.5" selected>2.5%</option><option value="3">3%</option><option value="4">4%</option><option value="5">5%</option></select><div class="rate-pills" id="ratePills"><div class="rate-pill" data-rate="1" onclick="setRate(this)">1%</div><div class="rate-pill" data-rate="1.5" onclick="setRate(this)">1.5%</div><div class="rate-pill" data-rate="2" onclick="setRate(this)">2%</div><div class="rate-pill active" data-rate="2.5" onclick="setRate(this)">2.5%</div><div class="rate-pill" data-rate="3" onclick="setRate(this)">3%</div><div class="rate-pill" data-rate="4" onclick="setRate(this)">4%</div><div class="rate-pill" data-rate="5" onclick="setRate(this)">5%</div></div></div></div><button class="calc-btn" onclick="calculate()">🖩 CALCULATE</button><button id="installBtn" style="display:none;background:#2e7d32;" onclick="installApp()">📲 App Install करें</button></div><div class="feature-row" id="featureRow"><div class="feature-item"><div class="feature-circle" style="background:#e4edfb;">🛡️</div><div class="feature-title">100% Secure</div><div class="feature-sub">Your data is safe</div></div><div class="feature-item"><div class="feature-circle" style="background:#e2f7e9;">⚡</div><div class="feature-title">Instant Result</div><div class="feature-sub">Calculate in seconds</div></div><div class="feature-item"><div class="feature-circle" style="background:#f2e9fb;">📄</div><div class="feature-title">Save & Share</div><div class="feature-sub">PDF & WhatsApp</div></div></div><div class="result-card" id="resultCard" style="display:none;"><div class="result-card-header">📄 RESULT</div><div class="result-body" id="result"></div><div class="action-row"><button class="pdf-btn" onclick="downloadPDF()">📕 Download PDF</button><button class="wa-btn" onclick="shareWhatsApp()">💬 WhatsApp Share</button><button class="save-btn" onclick="saveHistory()">💾 Save History</button></div></div></div><!-- ===== HISTORY PAGE ===== --><div id="page-history" class="page"><div class="history-header">⟲ HISTORY</div><div class="history-clear"><a onclick="clearHistory()">सारी History हटाएं</a></div><div class="history-list" id="historyList"></div></div><!-- ===== ABOUT PAGE ===== --><div id="page-about" class="page"><div class="about-card"><h3>Interest Calculator Pro</h3><p>CK2026 Annual Compound Rule ke hisab se interest calculate karne ka tool.<br><br>Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par share karta hai, aur history save rakhta hai.<br><br><b>Powered by CK2026</b><br>Version 1.0</p></div></div><div class="bottom-nav"><div class="nav-item active" id="nav-calculator" onclick="showPage('calculator')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="15"/></svg>Calculator</div><div class="nav-item" id="nav-history" onclick="showPage('history')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 16 14"/></svg>History</div><div class="nav-item" id="nav-about" onclick="showPage('about')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12" y2="8"/></svg>About</div></div><script>let reportText="";let lastCalc=null;function inr(num){return Number(num).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});}function iconCircle(inner,size){size=size||32;return `<div style="width:${size}px;height:${size}px;min-width:${size}px;border:2px solid #12395f;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ffffff;">${inner}</div>`;}const ICONS={clock:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,calendar:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,person:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>`,shield:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,calculator:`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="15"/><line x1="8" y1="19" x2="8" y2="19"/><line x1="12" y1="19" x2="12" y2="19"/><line x1="16" y1="19" x2="16" y2="19"/></svg>`,rupee:`<span style="font-size:13px;font-weight:800;color:#12395f;">₹</span>`,percent:`<span style="font-size:12px;font-weight:800;color:#12395f;">%</span>`};function setRate(el){document.getElementById("rate").value = el.getAttribute("data-rate");let pills = document.querySelectorAll(".rate-pill");pills.forEach(function(p){ p.classList.remove("active"); });el.classList.add("active");}function formatDateSlash(dt){return `${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}/${dt.getFullYear()}`;}function formatTime12(dt){let h=dt.getHours();let m=String(dt.getMinutes()).padStart(2,'0');let ampm=h>=12?"PM":"AM";h=h%12; if(h===0)h=12;return `${h}:${m} ${ampm}`;}function calculate(){let fromValue=document.getElementById("from").value;let toValue=document.getElementById("to").value;let p=parseFloat(document.getElementById("principal").value);let r=parseFloat(document.getElementById("rate").value);if(!fromValue || !toValue || !p){alert("कृपया सभी जानकारी भरें");return;}let from=new Date(fromValue);let to=new Date(toValue);let years=to.getFullYear()-from.getFullYear();let months=to.getMonth()-from.getMonth();let days=to.getDate()-from.getDate();if(days<0){months--;days+=30;}if(months<0){years--;months+=12;}let principal = p;let totalInterest = 0;let yearlyData = [];// Annual compoundfor(let i=1;i<=years;i++){ let yearInterest = principal * (r*12)/100; let newPrincipal = principal + yearInterest; yearlyData.push({year:i, principal:principal, interest:yearInterest, newPrincipal:newPrincipal}); principal = newPrincipal; totalInterest += yearInterest;}let monthInterest = 0;let dayInterest = 0;let basePrincipal = principal;if(months>0){ monthInterest = basePrincipal * r * months /100;}if(days>0){ dayInterest = basePrincipal * r * (days/30)/100;}principal = basePrincipal + monthInterest + dayInterest;totalInterest += monthInterest + dayInterest;let finalAmount = principal;let today = new Date();let reportDate = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;let fromDateFormatted = `${String(from.getDate()).padStart(2,'0')}-${String(from.getMonth()+1).padStart(2,'0')}-${from.getFullYear()}`;let toDateFormatted = `${String(to.getDate()).padStart(2,'0')}-${String(to.getMonth()+1).padStart(2,'0')}-${to.getFullYear()}`;let calcDateStr = formatDateSlash(today);let calcTimeStr = formatTime12(today);lastCalc={id:Date.now(),name:"CHANDRAMOHAN SINGH",reportDate:reportDate,calcDate:calcDateStr,calcTime:calcTimeStr,fromDateFormatted:fromDateFormatted,toDateFormatted:toDateFormatted,years:years, months:months, days:days,principal:p, rate:r,yearlyData:yearlyData,monthInterest:monthInterest, dayInterest:dayInterest,totalInterest:totalInterest, finalAmount:finalAmount};let detailText = "";yearlyData.forEach(function(y){detailText += `वर्ष ${y.year}\n\nमूलधन : ₹${inr(y.principal)}\n\nब्याज : ₹${inr(y.interest)}\n\nनया मूलधन : ₹${inr(y.newPrincipal)}\n\n`;});if(months>0) detailText += `${months} महीने का ब्याज : ₹${inr(monthInterest)}\n\n`;if(days>0) detailText += `${days} दिन का ब्याज : ₹${inr(dayInterest)}\n\n`;reportText =`Interest Calculator ProWelcome, CHANDRAMOHAN SINGHPowered by CK2026रिपोर्ट दिनांक : ${reportDate}____________________________समय : ${years} वर्ष ${months} महीने ${days} दिनमूलधन : ₹${inr(p)}ब्याज दर : ${r}% प्रति माह____________________________विवरण${detailText}____________________________कुल ब्याज : ₹${inr(totalInterest)}कुल रुपये : ₹${inr(finalAmount)}____________________________Calculation MethodCK2026 Annual Compound Rule`;lastCalc.reportText = reportText;let resultHTML = `<div class="result-datetime"><span>Date: ${lastCalc.calcDate}</span><span>Time: ${lastCalc.calcTime}</span></div><div class="result-section-title">--: ब्याज का विवरण :--</div><div class="result-row"><span>मूलधन (₹)</span><b>${inr(p)}</b></div><div class="result-row"><span>मासिक ब्याज दर</span><b>${r}%</b></div><div class="result-divider"></div><div class="result-row"><span>समय</span><b>${years} साल ${months} महिना ${days} दिन</b></div><div class="result-divider"></div><div class="result-section-title">ब्याज का विवरण</div><div class="result-row"><span>कुल ब्याज (₹)</span><b>${inr(totalInterest)}</b></div><div class="result-row"><span>कुल राशि (₹)</span><b>${inr(finalAmount)}</b></div><div class="result-thanks">धन्यवाद!<br>Report Generated by CK2026</div>`;document.getElementById("result").innerHTML = resultHTML;document.getElementById("resultCard").style.display = "block";document.getElementById("featureRow").style.display = "none";}function downloadPDF(dataOverride){let d = dataOverride || lastCalc;if(!d){alert("कृपया पहले Calculate बटन दबाएं");return;}let yearsRows = d.yearlyData.map(function(y){return `<tr class="ck-year-row"><td class="ck-year-cell">वर्ष ${y.year}</td><td>${inr(y.principal)}</td><td>${inr(y.interest)}</td><td>${inr(y.newPrincipal)}</td></tr>`;}).join("");let extraBoxHTML="";if(d.months>0 || d.days>0){extraBoxHTML = `<div class="ck-extra-box">${d.months>0 ? `<div class="ck-extra-col">${iconCircle(ICONS.calendar,30)}<div><div class="ck-extra-label">${d.months} महीने का ब्याज</div><div class="ck-extra-value">₹${inr(d.monthInterest)}</div></div></div>` : ""}${(d.months>0 && d.days>0) ? `<div class="ck-divider-v"></div>` : ""}${d.days>0 ? `<div class="ck-extra-col">${iconCircle(ICONS.calendar,30)}<div><div class="ck-extra-label">${d.days} दिन का ब्याज</div><div class="ck-extra-value">₹${inr(d.dayInterest)}</div></div></div>` : ""}</div>`;}const FLOURISH=`<svg viewBox="0 0 40 40" width="30" height="30" fill="none"><path d="M1.5 15 L1.5 1.5 L15 1.5" stroke="#b8912e" stroke-width="1.6"/><path d="M8 15 L8 8 L15 8" stroke="#b8912e" stroke-width="1"/><rect x="0.5" y="0.5" width="4" height="4" fill="#0a2647"/></svg>`;const SWIRL=`<svg width="90" height="10" viewBox="0 0 90 10"><line x1="0" y1="5" x2="38" y2="5" stroke="#b8912e" stroke-width="1"/><rect x="41" y="1" width="8" height="8" fill="#b8912e" transform="rotate(45 45 5)"/><line x1="52" y1="5" x2="90" y2="5" stroke="#b8912e" stroke-width="1"/></svg>`;let html = `<div class="ck-pdf"><style>.ck-pdf{font-family:'Noto Sans Devanagari','Nirmala UI',Arial,sans-serif;width:760px;color:#14395e;background:#ffffff;}.ck-pdf *{box-sizing:border-box;}.ck-header,.ck-welcome-box,.ck-section-wrap,.ck-total-box,.ck-method,.ck-footer,.ck-extra-box{page-break-inside:avoid;break-inside:avoid;}.ck-frame{position:relative;border:1.5px solid #b8912e;border-radius:10px;padding:15px;background:#ffffff;}.ck-corner{position:absolute;width:30px;height:30px;z-index:2;}.ck-frame-inner{border:2px solid #0a2647;border-radius:6px;overflow:hidden;box-shadow:0 0 0 4px #ffffff, 0 0 0 5px #c9a227;}.ck-header{background:#0a2647;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;margin:14px 14px 0 14px;border:1px solid #caa04a;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px);}.ck-header-left{display:flex;align-items:center;gap:16px;}.ck-logo{width:52px;height:52px;background:#12395f;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #caa04a;}.ck-title{font-size:30px;font-weight:800;color:#ffffff;letter-spacing:1px;margin:0;line-height:1.1;}.ck-title span{font-weight:800;color:#e8b23d;}.ck-badge{background:#0a2647;border:1.5px solid #caa04a;color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;}.ck-body{padding:20px 30px 8px 30px;}.ck-welcome-box{border:1.5px solid #c9d6e8;border-radius:12px;display:flex;align-items:center;padding:14px 18px;margin-bottom:18px;}.ck-welcome-item{display:flex;align-items:center;gap:12px;flex:1;}.ck-welcome-item div{font-size:13.5px;color:#4a5a72;line-height:1.5;}.ck-welcome-item b{color:#14395e;font-size:14.5px;}.ck-divider-v{width:1.5px;background:#c9d6e8;align-self:stretch;margin:0 14px;}.ck-section-wrap{margin-bottom:18px;}.ck-section-tab{display:inline-block;background:#0a2647;color:#fff;font-weight:700;font-size:15px;padding:7px 20px;border-radius:8px 8px 0 0;position:relative;top:2px;margin-left:6px;}.ck-section-box{border:1.5px solid #c9d6e8;border-radius:0 12px 12px 12px;padding:16px 14px;}.ck-info-grid{display:flex;align-items:stretch;}.ck-info-col{flex:1;display:flex;align-items:center;gap:10px;padding:0 8px;}.ck-info-col div{line-height:1.4;}.ck-info-label{font-size:12.5px;color:#5a6b82;}.ck-info-value{font-size:15px;font-weight:700;color:#14395e;}table.ck-table{width:100%;border-collapse:collapse;font-size:14px;}table.ck-table th{background:#0a2647;color:#fff;padding:11px 10px;font-weight:700;}table.ck-table td{padding:11px 10px;text-align:center;border-bottom:2px solid #e2e8f2;color:#14395e;font-weight:700;font-size:14.5px;}table.ck-table tr:last-child td{border-bottom:none;}.ck-year-cell{font-size:18px;font-weight:900;color:#0a2647;background:#f4f8ff;border-right:1px solid #e2e8f2;}.ck-extra-box{border:1.5px solid #caa04a;border-radius:12px;padding:14px 10px;margin-top:14px;display:flex;align-items:center;justify-content:center;}.ck-extra-col{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;}.ck-extra-label{font-size:13px;color:#5a6b82;margin-bottom:4px;}.ck-extra-value{font-size:18px;font-weight:700;color:#14395e;}.ck-total-box{border:2px dashed #3b6bb5;background:#eef4fc;border-radius:12px;padding:16px 10px;display:flex;align-items:center;margin-top:16px;}.ck-total-col{flex:1;text-align:center;}.ck-total-label{font-size:13.5px;color:#14395e;font-weight:700;margin-bottom:5px;}.ck-total-value{font-size:24px;font-weight:800;color:#0a2647;}.ck-total-dots{display:flex;flex-direction:column;gap:5px;align-items:center;margin:0 8px;}.ck-total-dots span{width:5px;height:5px;border-radius:50%;display:block;}.ck-method{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0 8px 0;}.ck-method div{font-size:13px;color:#4a5a72;line-height:1.4;}.ck-method b{color:#14395e;}.ck-method-divider{display:flex;justify-content:center;margin-bottom:6px;}.ck-footer{background:#0a2647;color:#fff;text-align:center;padding:12px 14px 14px 14px;margin:0 14px 14px 14px;border:1px solid #caa04a;border-radius:2px;}.ck-footer-row{display:flex;align-items:center;justify-content:center;gap:14px;}.ck-footer .thanks{font-style:italic;font-size:14px;}.ck-footer .disclaimer{color:#e8b23d;font-size:12px;margin-top:5px;}</style><div class="ck-frame"><div class="ck-corner" style="top:-2px;left:-2px;">${FLOURISH}</div><div class="ck-corner" style="top:-2px;right:-2px;transform:rotate(90deg);">${FLOURISH}</div><div class="ck-corner" style="bottom:-2px;right:-2px;transform:rotate(180deg);">${FLOURISH}</div><div class="ck-corner" style="bottom:-2px;left:-2px;transform:rotate(270deg);">${FLOURISH}</div><div class="ck-frame-inner"><div class="ck-header"><div class="ck-header-left"><div class="ck-logo">${ICONS.calculator}</div><div><div class="ck-title">INTEREST <span>REPORT</span></div></div></div><div class="ck-badge">Powered by CK2026</div></div><div class="ck-body"><div class="ck-welcome-box"><div class="ck-welcome-item">${iconCircle(ICONS.person,32)}<div>Welcome,<br><b>${d.name}</b></div></div><div class="ck-divider-v"></div><div class="ck-welcome-item">${iconCircle(ICONS.calendar,32)}<div>रिपोर्ट दिनांक<br><b>${d.reportDate}</b></div></div><div class="ck-divider-v"></div><div class="ck-welcome-item">${iconCircle(ICONS.calendar,32)}<div>ब्याज अवधि<br><b>${d.fromDateFormatted} से<br>${d.toDateFormatted} तक</b></div></div></div><div class="ck-section-wrap"><div class="ck-section-tab">गणना विवरण</div><div class="ck-section-box"><div class="ck-info-grid"><div class="ck-info-col">${iconCircle(ICONS.clock,28)}<div><div class="ck-info-label">समय</div><div class="ck-info-value">${d.years} वर्ष ${d.months} महीने ${d.days} दिन</div></div></div><div class="ck-divider-v"></div><div class="ck-info-col">${iconCircle(ICONS.rupee,28)}<div><div class="ck-info-label">मूलधन</div><div class="ck-info-value">₹${inr(d.principal)}</div></div></div><div class="ck-divider-v"></div><div class="ck-info-col">${iconCircle(ICONS.percent,28)}<div><div class="ck-info-label">ब्याज दर</div><div class="ck-info-value">${d.rate}% प्रति माह</div></div></div><div class="ck-divider-v"></div><div class="ck-info-col">${iconCircle(ICONS.calendar,28)}<div><div class="ck-info-label">गणना विधि</div><div class="ck-info-value" style="font-size:13px;">CK2026 Annual<br>Compound Rule</div></div></div></div></div></div><div class="ck-section-wrap"><div class="ck-section-tab">वर्षवार विवरण</div><div class="ck-section-box" style="padding:0;overflow:hidden;"><table class="ck-table"><thead><tr><th>वर्ष</th><th>मूलधन (₹)</th><th>ब्याज (₹)</th><th>नया मूलधन (₹)</th></tr></thead><tbody>${yearsRows}</tbody></table></div>${extraBoxHTML}</div><div class="ck-total-box"><div class="ck-total-col"><div class="ck-total-label">कुल ब्याज</div><div class="ck-total-value">₹${inr(d.totalInterest)}</div></div><div class="ck-divider-v" style="background:#c9a227;"></div><div class="ck-total-col"><div class="ck-total-label">कुल रुपये (मूलधन + ब्याज)</div><div class="ck-total-value">₹${inr(d.finalAmount)}</div></div></div><div class="ck-method">${iconCircle(ICONS.shield,32)}<div><b>Calculation Method</b><br>CK2026 Annual Compound Rule</div></div><div class="ck-method-divider">${SWIRL}</div></div><div class="ck-footer"><div class="ck-footer-row">${SWIRL}<div class="thanks">Thank you for using Interest Calculator Pro</div>${SWIRL}</div><div class="disclaimer">यह केवल जानकारी हेतु है, विधिक या वित्तीय सलाह नहीं है।</div></div></div></div></div>`;let pdfFilename = 'Interest_Report_CK2026_'+(d.id||Date.now())+'.pdf';let opt = {margin:10,filename:pdfFilename,image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff",scrollX:0,scrollY:0},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['legacy']}};html2pdf().set(opt).from(html, 'string').save().catch(function(err){console.log("PDF error:",err);alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");});}function shareWhatsApp(textOverride){let text = textOverride || reportText;let url="https://wa.me/?text="+encodeURIComponent(text);window.open(url,"_blank");}function getHistoryList(){try{let raw = localStorage.getItem("ck2026_history_list");return raw ? JSON.parse(raw) : [];}catch(e){return [];}}function saveHistory(){if(!lastCalc){alert("कृपया पहले Calculate बटन दबाएं");return;}let list = getHistoryList();list.unshift(lastCalc);if(list.length>30) list = list.slice(0,30);localStorage.setItem("ck2026_history_list", JSON.stringify(list));alert("History Save हो गया!");}function clearHistory(){if(confirm("क्या आप सारी History हटाना चाहते हैं?")){localStorage.removeItem("ck2026_history_list");renderHistory();}}function findHistoryEntry(id){let list = getHistoryList();return list.find(function(e){ return e.id===id; });}function downloadPDFFromHistory(id){let entry = findHistoryEntry(id);if(entry) downloadPDF(entry);}function shareWhatsAppFromHistory(id){let entry = findHistoryEntry(id);if(entry) shareWhatsApp(entry.reportText);}function renderHistory(){let list = getHistoryList();let container = document.getElementById("historyList");if(list.length===0){container.innerHTML = `<div class="history-empty">अभी तक कोई History save नहीं हुई है।</div>`;return;}container.innerHTML = list.map(function(e){return `<div class="history-card"><div class="history-card-main"><div class="history-card-top"><span>📅 ${e.calcDate||e.reportDate}</span><span>🕒 ${e.calcTime||""}</span></div><div class="history-row"><span>From: <b>${e.fromDateFormatted}</b></span><span>To: <b>${e.toDateFormatted}</b></span></div><div class="history-row"><span>Principal: <b>₹${inr(e.principal)}</b></span><span>Rate: <b>${e.rate}%</b></span></div><div class="history-row"><span>समय: <b>${e.years} साल ${e.months} महिना ${e.days} दिन</b></span></div><div class="history-row"><span>ब्याज: <b>₹${inr(e.totalInterest)}</b></span><span>कुल राशि: <b>₹${inr(e.finalAmount)}</b></span></div></div><div class="history-actions"><button class="history-icon-btn" style="background:#c62828;" onclick="downloadPDFFromHistory(${e.id})">PDF</button><button class="history-icon-btn" style="background:#2e7d32;" onclick="shareWhatsAppFromHistory(${e.id})">💬</button></div></div>`;}).join("");}function showPage(name){["calculator","history","about"].forEach(function(p){document.getElementById("page-"+p).classList.remove("active");document.getElementById("nav-"+p).classList.remove("active");});document.getElementById("page-"+name).classList.add("active");document.getElementById("nav-"+name).classList.add("active");if(name==="history") renderHistory();window.scrollTo(0,0);}// ---- PWA: service worker registration + install prompt ----let deferredInstallPrompt=null;if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("service-worker.js").catch(function(err){console.log("Service worker registration failed:",err);});});}window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();deferredInstallPrompt=e;let btn=document.getElementById("installBtn");if(btn) btn.style.display="block";});function installApp(){if(!deferredInstallPrompt){alert("यह app पहले से install हो चुका है, या आपका browser install support नहीं करता।");return;}deferredInstallPrompt.prompt();deferredInstallPrompt.userChoice.then(function(){deferredInstallPrompt=null;document.getElementById("installBtn").style.display="none";});}window.addEventListener("appinstalled",function(){let btn=document.getElementById("installBtn");if(btn) btn.style.display="none";});</script></body></html>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Interest Calculator Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d47a1">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Interest Calc">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+*{box-sizing:border-box;}
+body{font-family:Arial;margin:0;background:#eef3ff;padding-bottom:70px;}
+
+.topbar{background:linear-gradient(135deg,#0d3fb0,#1550c9);color:#fff;padding:18px 18px 34px 18px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;}
+.topbar-left{display:flex;align-items:center;gap:14px;}
+.hamburger{font-size:24px;line-height:1;cursor:pointer;}
+.app-title{font-size:21px;font-weight:800;}
+.app-welcome{font-size:14px;color:#ffcb3d;margin-top:4px;font-weight:600;}
+.menu-dots{font-size:22px;letter-spacing:2px;cursor:pointer;}
+
+.page{display:none;}
+.page.active{display:block;}
+
+.calc-card{
+    max-width:520px;margin:-20px auto 15px auto;background:white;position:relative;z-index:20;
+    padding:24px 20px;border-radius:22px;box-shadow:0 6px 20px rgba(20,40,90,0.12);
+}
+.field-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
+.field-icon{width:44px;height:44px;min-width:44px;border-radius:12px;background:#1550c9;display:flex;align-items:center;justify-content:center;color:#fff;}
+.field-content{flex:1;min-width:0;}
+label{font-size:15px;color:#1a2540;font-weight:700;display:block;margin-bottom:6px;}
+input,select{width:100%;padding:12px;margin:0;border:1.5px solid #dfe6f2;border-radius:10px;font-size:14.5px;background:#fbfcfe;}
+
+.rate-pills{display:flex;gap:8px;overflow-x:auto;margin:10px 0 4px 0;padding-bottom:2px;}
+.rate-pill{flex:0 0 auto;padding:10px 16px;border-radius:10px;border:1.5px solid #dfe6f2;background:#fff;color:#1550c9;font-weight:700;font-size:13.5px;cursor:pointer;}
+.rate-pill.active{background:#1550c9;color:#fff;border-color:#1550c9;}
+
+button{
+    width:100%;padding:14px;margin-top:8px;
+    border:none;border-radius:12px;
+    background:#1976d2;color:white;font-size:15px;font-weight:700;
+}
+.calc-btn{background:linear-gradient(90deg,#2fa84f,#1c8236);font-size:16px;letter-spacing:0.5px;}
+.secondary{background:#444;}
+
+.feature-row{max-width:520px;margin:0 auto 15px auto;background:#f3f6fc;border-radius:18px;display:flex;padding:20px 8px;}
+.feature-item{flex:1;text-align:center;}
+.feature-circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px auto;}
+.feature-title{font-weight:700;font-size:12.5px;color:#1a2540;}
+.feature-sub{font-size:10.5px;color:#8892a6;margin-top:2px;}
+
+.result-card{max-width:520px;margin:15px auto;background:#eaf3ff;border-radius:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
+.result-card-header{background:#0d47a1;color:#fff;padding:12px 16px;font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px;}
+.result-body{padding:16px;}
+.result-row{display:flex;justify-content:space-between;padding:4px 0;font-size:14px;color:#14395e;}
+.result-row b{font-weight:700;}
+.result-divider{border-top:1px solid #c9d6e8;margin:8px 0;}
+.result-section-title{color:#b5171e;font-weight:700;margin:10px 0 6px 0;text-align:center;font-size:14px;}
+.result-thanks{text-align:center;color:#0d47a1;font-weight:700;margin-top:14px;font-size:13px;line-height:1.6;}
+.result-datetime{display:flex;justify-content:space-between;font-size:12.5px;color:#4a5a72;margin-bottom:8px;}
+
+.action-row{display:flex;gap:8px;padding:0 16px 16px 16px;}
+.action-row button{flex:1;font-size:12px;padding:12px 4px;margin-top:0;border-radius:10px;}
+.pdf-btn{background:#c62828;}
+.wa-btn{background:#2e7d32;}
+.save-btn{background:#37474f;}
+
+.history-header{background:#0d47a1;color:#fff;padding:14px 16px;font-weight:700;display:flex;align-items:center;gap:10px;margin:15px;border-radius:8px;font-size:15px;}
+.history-list{padding:0 15px 15px 15px;}
+.history-card{background:#fff;border:1px solid #e2e8f2;border-radius:10px;padding:14px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06);display:flex;justify-content:space-between;gap:10px;}
+.history-card-main{flex:1;min-width:0;}
+.history-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#0d47a1;font-weight:700;font-size:14px;}
+.history-row{display:flex;gap:16px;font-size:12.5px;color:#333;margin-bottom:4px;flex-wrap:wrap;}
+.history-row span b{color:#14395e;}
+.history-actions{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;}
+.history-icon-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:10px;font-weight:800;}
+.history-empty{text-align:center;color:#888;padding:50px 20px;font-size:14px;}
+.history-clear{text-align:center;margin:0 15px 5px 15px;}
+.history-clear a{color:#c62828;font-size:13px;text-decoration:underline;cursor:pointer;}
+
+.about-card{max-width:520px;margin:20px auto;background:#fff;border-radius:10px;padding:24px 20px;text-align:center;}
+.about-card h3{color:#0d47a1;margin-bottom:4px;}
+.about-card p{color:#4a5a72;font-size:13.5px;line-height:1.7;}
+
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0d47a1;display:flex;z-index:80;box-shadow:0 -2px 8px rgba(0,0,0,0.15);padding:6px;gap:4px;}
+.nav-item{flex:1;text-align:center;padding:9px 0 9px 0;color:#a9c3ec;font-size:11px;cursor:pointer;border-radius:14px;font-weight:600;}
+.nav-item svg{display:block;margin:0 auto 3px auto;}
+.nav-item.active{color:#0d47a1;background:#ffffff;}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="topbar-left">
+<span class="hamburger">☰</span>
+<div>
+<div class="app-title">Interest Calculator Pro</div>
+<div class="app-welcome">Welcome, CHANDRAMOHAN SINGH 👋</div>
+</div>
+</div>
+<span class="menu-dots">⋮</span>
+</div>
+
+<!-- ===== CALCULATOR PAGE ===== -->
+<div id="page-calculator" class="page active">
+
+<div class="calc-card">
+
+<div class="field-row">
+<div class="field-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+<div class="field-content">
+<label>From Date</label>
+<input type="date" id="from">
+</div>
+</div>
+
+<div class="field-row">
+<div class="field-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+<div class="field-content">
+<label>To Date</label>
+<input type="date" id="to">
+</div>
+</div>
+
+<div class="field-row">
+<div class="field-icon" style="font-weight:800;font-size:18px;">₹</div>
+<div class="field-content">
+<label>Principal (₹)</label>
+<input type="number" id="principal" placeholder="Enter Principal Amount">
+</div>
+</div>
+
+<div class="field-row">
+<div class="field-icon" style="font-weight:800;font-size:16px;">%</div>
+<div class="field-content">
+<label>Rate (Monthly %)</label>
+<select id="rate" style="display:none;">
+<option value="1">1%</option>
+<option value="1.5">1.5%</option>
+<option value="2">2%</option>
+<option value="2.5" selected>2.5%</option>
+<option value="3">3%</option>
+<option value="4">4%</option>
+<option value="5">5%</option>
+</select>
+<div class="rate-pills" id="ratePills">
+<div class="rate-pill" data-rate="1" onclick="setRate(this)">1%</div>
+<div class="rate-pill" data-rate="1.5" onclick="setRate(this)">1.5%</div>
+<div class="rate-pill" data-rate="2" onclick="setRate(this)">2%</div>
+<div class="rate-pill active" data-rate="2.5" onclick="setRate(this)">2.5%</div>
+<div class="rate-pill" data-rate="3" onclick="setRate(this)">3%</div>
+<div class="rate-pill" data-rate="4" onclick="setRate(this)">4%</div>
+<div class="rate-pill" data-rate="5" onclick="setRate(this)">5%</div>
+</div>
+</div>
+</div>
+
+<button class="calc-btn" onclick="calculate()">🖩 CALCULATE</button>
+<button id="installBtn" style="display:none;background:#2e7d32;" onclick="installApp()">📲 App Install करें</button>
+
+</div>
+
+<div class="feature-row" id="featureRow">
+<div class="feature-item">
+<div class="feature-circle" style="background:#e4edfb;">🛡️</div>
+<div class="feature-title">100% Secure</div>
+<div class="feature-sub">Your data is safe</div>
+</div>
+<div class="feature-item">
+<div class="feature-circle" style="background:#e2f7e9;">⚡</div>
+<div class="feature-title">Instant Result</div>
+<div class="feature-sub">Calculate in seconds</div>
+</div>
+<div class="feature-item">
+<div class="feature-circle" style="background:#f2e9fb;">📄</div>
+<div class="feature-title">Save & Share</div>
+<div class="feature-sub">PDF & WhatsApp</div>
+</div>
+</div>
+
+<div class="result-card" id="resultCard" style="display:none;">
+<div class="result-card-header">📄 RESULT</div>
+<div class="result-body" id="result"></div>
+<div class="action-row">
+<button class="pdf-btn" onclick="downloadPDF()">📕 Download PDF</button>
+<button class="wa-btn" onclick="shareWhatsApp()">💬 WhatsApp Share</button>
+<button class="save-btn" onclick="saveHistory()">💾 Save History</button>
+</div>
+</div>
+
+</div>
+
+<!-- ===== HISTORY PAGE ===== -->
+<div id="page-history" class="page">
+<div class="history-header">⟲ HISTORY</div>
+<div class="history-clear"><a onclick="clearHistory()">सारी History हटाएं</a></div>
+<div class="history-list" id="historyList"></div>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="page-about" class="page">
+<div class="about-card">
+<h3>Interest Calculator Pro</h3>
+<p>
+CK2026 Annual Compound Rule ke hisab se interest calculate karne ka tool.<br><br>
+Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par share karta hai, aur history save rakhta hai.<br><br>
+<b>Powered by CK2026</b><br>
+Version 1.0
+</p>
+</div>
+</div>
+
+<div class="bottom-nav">
+<div class="nav-item active" id="nav-calculator" onclick="showPage('calculator')">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="15"/></svg>
+Calculator
+</div>
+<div class="nav-item" id="nav-history" onclick="showPage('history')">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 16 14"/></svg>
+History
+</div>
+<div class="nav-item" id="nav-about" onclick="showPage('about')">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+About
+</div>
+</div>
+
+<script>
+let reportText="";
+let lastCalc=null;
+
+function inr(num){
+return Number(num).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function iconCircle(inner,size){
+size=size||32;
+return `<div style="width:${size}px;height:${size}px;min-width:${size}px;border:2px solid #12395f;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ffffff;">${inner}</div>`;
+}
+
+const ICONS={
+clock:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+calendar:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+person:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>`,
+shield:`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12395f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
+calculator:`<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="15"/><line x1="8" y1="19" x2="8" y2="19"/><line x1="12" y1="19" x2="12" y2="19"/><line x1="16" y1="19" x2="16" y2="19"/></svg>`,
+rupee:`<span style="font-size:13px;font-weight:800;color:#12395f;">₹</span>`,
+percent:`<span style="font-size:12px;font-weight:800;color:#12395f;">%</span>`
+};
+
+function setRate(el){
+document.getElementById("rate").value = el.getAttribute("data-rate");
+let pills = document.querySelectorAll(".rate-pill");
+pills.forEach(function(p){ p.classList.remove("active"); });
+el.classList.add("active");
+}
+
+function formatDateSlash(dt){
+return `${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}/${dt.getFullYear()}`;
+}
+function formatTime12(dt){
+let h=dt.getHours();
+let m=String(dt.getMinutes()).padStart(2,'0');
+let ampm=h>=12?"PM":"AM";
+h=h%12; if(h===0)h=12;
+return `${h}:${m} ${ampm}`;
+}
+
+function calculate(){
+
+let fromValue=document.getElementById("from").value;
+let toValue=document.getElementById("to").value;
+let p=parseFloat(document.getElementById("principal").value);
+let r=parseFloat(document.getElementById("rate").value);
+
+if(!fromValue || !toValue || !p){
+alert("कृपया सभी जानकारी भरें");
+return;
+}
+
+let from=new Date(fromValue);
+let to=new Date(toValue);
+
+let years=to.getFullYear()-from.getFullYear();
+let months=to.getMonth()-from.getMonth();
+let days=to.getDate()-from.getDate();
+
+if(days<0){months--;days+=30;}
+if(months<0){years--;months+=12;}
+
+let principal = p;
+let totalInterest = 0;
+let yearlyData = [];
+
+// Annual compound
+for(let i=1;i<=years;i++){
+ let yearInterest = principal * (r*12)/100;
+ let newPrincipal = principal + yearInterest;
+ yearlyData.push({year:i, principal:principal, interest:yearInterest, newPrincipal:newPrincipal});
+ principal = newPrincipal;
+ totalInterest += yearInterest;
+}
+
+let monthInterest = 0;
+let dayInterest = 0;
+let basePrincipal = principal;
+if(months>0){
+ monthInterest = basePrincipal * r * months /100;
+}
+if(days>0){
+ dayInterest = basePrincipal * r * (days/30)/100;
+}
+principal = basePrincipal + monthInterest + dayInterest;
+totalInterest += monthInterest + dayInterest;
+let finalAmount = principal;
+
+let today = new Date();
+let reportDate = `${String(today.getDate()).padStart(2,'0')}-${String(today.getMonth()+1).padStart(2,'0')}-${today.getFullYear()}`;
+let fromDateFormatted = `${String(from.getDate()).padStart(2,'0')}-${String(from.getMonth()+1).padStart(2,'0')}-${from.getFullYear()}`;
+let toDateFormatted = `${String(to.getDate()).padStart(2,'0')}-${String(to.getMonth()+1).padStart(2,'0')}-${to.getFullYear()}`;
+
+let calcDateStr = formatDateSlash(today);
+let calcTimeStr = formatTime12(today);
+
+lastCalc={
+id:Date.now(),
+name:"CHANDRAMOHAN SINGH",
+reportDate:reportDate,
+calcDate:calcDateStr,
+calcTime:calcTimeStr,
+fromDateFormatted:fromDateFormatted,
+toDateFormatted:toDateFormatted,
+years:years, months:months, days:days,
+principal:p, rate:r,
+yearlyData:yearlyData,
+monthInterest:monthInterest, dayInterest:dayInterest,
+totalInterest:totalInterest, finalAmount:finalAmount
+};
+
+let detailText = "";
+yearlyData.forEach(function(y){
+detailText += `वर्ष ${y.year}\n\nमूलधन : ₹${inr(y.principal)}\n\nब्याज : ₹${inr(y.interest)}\n\nनया मूलधन : ₹${inr(y.newPrincipal)}\n\n`;
+});
+if(months>0) detailText += `${months} महीने का ब्याज : ₹${inr(monthInterest)}\n\n`;
+if(days>0) detailText += `${days} दिन का ब्याज : ₹${inr(dayInterest)}\n\n`;
+
+reportText =
+`Interest Calculator Pro
+
+Welcome, CHANDRAMOHAN SINGH
+
+Powered by CK2026
+
+रिपोर्ट दिनांक : ${reportDate}
+
+____________________________
+
+समय : ${years} वर्ष ${months} महीने ${days} दिन
+
+मूलधन : ₹${inr(p)}
+
+ब्याज दर : ${r}% प्रति माह
+
+____________________________
+
+विवरण
+
+${detailText}
+____________________________
+
+कुल ब्याज : ₹${inr(totalInterest)}
+
+कुल रुपये : ₹${inr(finalAmount)}
+
+____________________________
+
+Calculation Method
+CK2026 Annual Compound Rule`;
+
+lastCalc.reportText = reportText;
+
+let resultHTML = `
+<div class="result-datetime"><span>Date: ${lastCalc.calcDate}</span><span>Time: ${lastCalc.calcTime}</span></div>
+<div class="result-section-title">--: ब्याज का विवरण :--</div>
+<div class="result-row"><span>मूलधन (₹)</span><b>${inr(p)}</b></div>
+<div class="result-row"><span>मासिक ब्याज दर</span><b>${r}%</b></div>
+<div class="result-divider"></div>
+<div class="result-row"><span>समय</span><b>${years} साल ${months} महिना ${days} दिन</b></div>
+<div class="result-divider"></div>
+<div class="result-section-title">ब्याज का विवरण</div>
+<div class="result-row"><span>कुल ब्याज (₹)</span><b>${inr(totalInterest)}</b></div>
+<div class="result-row"><span>कुल राशि (₹)</span><b>${inr(finalAmount)}</b></div>
+<div class="result-thanks">धन्यवाद!<br>Report Generated by CK2026</div>
+`;
+document.getElementById("result").innerHTML = resultHTML;
+document.getElementById("resultCard").style.display = "block";
+document.getElementById("featureRow").style.display = "none";
+}
+
+function downloadPDF(dataOverride){
+
+let d = dataOverride || lastCalc;
+
+if(!d){
+alert("कृपया पहले Calculate बटन दबाएं");
+return;
+}
+
+let yearsRows = d.yearlyData.map(function(y){
+return `<tr class="ck-year-row">
+<td class="ck-year-cell">वर्ष ${y.year}</td>
+<td>${inr(y.principal)}</td>
+<td>${inr(y.interest)}</td>
+<td>${inr(y.newPrincipal)}</td>
+</tr>`;
+}).join("");
+
+let extraBoxHTML="";
+if(d.months>0 || d.days>0){
+extraBoxHTML = `
+<div class="ck-extra-box">
+${d.months>0 ? `<div class="ck-extra-col">${iconCircle(ICONS.calendar,30)}<div><div class="ck-extra-label">${d.months} महीने का ब्याज</div><div class="ck-extra-value">₹${inr(d.monthInterest)}</div></div></div>` : ""}
+${(d.months>0 && d.days>0) ? `<div class="ck-divider-v"></div>` : ""}
+${d.days>0 ? `<div class="ck-extra-col">${iconCircle(ICONS.calendar,30)}<div><div class="ck-extra-label">${d.days} दिन का ब्याज</div><div class="ck-extra-value">₹${inr(d.dayInterest)}</div></div></div>` : ""}
+</div>`;
+}
+
+const FLOURISH=`<svg viewBox="0 0 40 40" width="30" height="30" fill="none"><path d="M1.5 15 L1.5 1.5 L15 1.5" stroke="#b8912e" stroke-width="1.6"/><path d="M8 15 L8 8 L15 8" stroke="#b8912e" stroke-width="1"/><rect x="0.5" y="0.5" width="4" height="4" fill="#0a2647"/></svg>`;
+const SWIRL=`<svg width="90" height="10" viewBox="0 0 90 10"><line x1="0" y1="5" x2="38" y2="5" stroke="#b8912e" stroke-width="1"/><rect x="41" y="1" width="8" height="8" fill="#b8912e" transform="rotate(45 45 5)"/><line x1="52" y1="5" x2="90" y2="5" stroke="#b8912e" stroke-width="1"/></svg>`;
+
+let html = `
+<div class="ck-pdf">
+<style>
+.ck-pdf{font-family:'Noto Sans Devanagari','Nirmala UI',Arial,sans-serif;width:760px;color:#14395e;background:#ffffff;}
+.ck-pdf *{box-sizing:border-box;}
+.ck-header,.ck-welcome-box,.ck-total-box,.ck-method,.ck-footer,.ck-extra-box{page-break-inside:avoid;break-inside:avoid;}
+.ck-year-row{page-break-inside:avoid;break-inside:avoid;}
+thead{display:table-header-group;}
+.ck-frame{position:relative;border:1.5px solid #b8912e;border-radius:10px;padding:15px;background:#ffffff;}
+.ck-corner{position:absolute;width:30px;height:30px;z-index:2;}
+.ck-frame-inner{border:2px solid #0a2647;border-radius:6px;overflow:hidden;box-shadow:0 0 0 4px #ffffff, 0 0 0 5px #c9a227;}
+.ck-header{background:#0a2647;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;margin:14px 14px 0 14px;border:1px solid #caa04a;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px);}
+.ck-header-left{display:flex;align-items:center;gap:16px;}
+.ck-logo{width:52px;height:52px;background:#12395f;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #caa04a;}
+.ck-title{font-size:30px;font-weight:800;color:#ffffff;letter-spacing:1px;margin:0;line-height:1.1;}
+.ck-title span{font-weight:800;color:#e8b23d;}
+.ck-badge{background:#0a2647;border:1.5px solid #caa04a;color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;}
+.ck-body{padding:20px 30px 8px 30px;}
+.ck-welcome-box{border:1.5px solid #c9d6e8;border-radius:12px;display:flex;align-items:center;padding:14px 18px;margin-bottom:18px;}
+.ck-welcome-item{display:flex;align-items:center;gap:12px;flex:1;}
+.ck-welcome-item div{font-size:13.5px;color:#4a5a72;line-height:1.5;}
+.ck-welcome-item b{color:#14395e;font-size:14.5px;}
+.ck-divider-v{width:1.5px;background:#c9d6e8;align-self:stretch;margin:0 14px;}
+.ck-section-wrap{margin-bottom:18px;}
+.ck-section-tab{display:inline-block;background:#0a2647;color:#fff;font-weight:700;font-size:15px;padding:7px 20px;border-radius:8px 8px 0 0;position:relative;top:2px;margin-left:6px;}
+.ck-section-box{border:1.5px solid #c9d6e8;border-radius:0 12px 12px 12px;padding:16px 14px;}
+.ck-info-grid{display:flex;align-items:stretch;}
+.ck-info-col{flex:1;display:flex;align-items:center;gap:10px;padding:0 8px;}
+.ck-info-col div{line-height:1.4;}
+.ck-info-label{font-size:12.5px;color:#5a6b82;}
+.ck-info-value{font-size:15px;font-weight:700;color:#14395e;}
+table.ck-table{width:100%;border-collapse:collapse;font-size:14px;}
+table.ck-table th{background:#0a2647;color:#fff;padding:11px 10px;font-weight:700;}
+table.ck-table td{padding:11px 10px;text-align:center;border-bottom:2px solid #e2e8f2;color:#14395e;font-weight:700;font-size:14.5px;}
+table.ck-table tr:last-child td{border-bottom:none;}
+.ck-year-cell{font-size:18px;font-weight:900;color:#0a2647;background:#f4f8ff;border-right:1px solid #e2e8f2;}
+.ck-extra-box{border:1.5px solid #caa04a;border-radius:12px;padding:14px 10px;margin-top:14px;display:flex;align-items:center;justify-content:center;}
+.ck-extra-col{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;}
+.ck-extra-label{font-size:13px;color:#5a6b82;margin-bottom:4px;}
+.ck-extra-value{font-size:18px;font-weight:700;color:#14395e;}
+.ck-total-box{border:2px dashed #3b6bb5;background:#eef4fc;border-radius:12px;padding:16px 10px;display:flex;align-items:center;margin-top:16px;}
+.ck-total-col{flex:1;text-align:center;}
+.ck-total-label{font-size:13.5px;color:#14395e;font-weight:700;margin-bottom:5px;}
+.ck-total-value{font-size:24px;font-weight:800;color:#0a2647;}
+.ck-total-dots{display:flex;flex-direction:column;gap:5px;align-items:center;margin:0 8px;}
+.ck-total-dots span{width:5px;height:5px;border-radius:50%;display:block;}
+.ck-method{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0 8px 0;}
+.ck-method div{font-size:13px;color:#4a5a72;line-height:1.4;}
+.ck-method b{color:#14395e;}
+.ck-method-divider{display:flex;justify-content:center;margin-bottom:6px;}
+.ck-footer{background:#0a2647;color:#fff;text-align:center;padding:12px 14px 14px 14px;margin:0 14px 14px 14px;border:1px solid #caa04a;border-radius:2px;}
+.ck-footer-row{display:flex;align-items:center;justify-content:center;gap:14px;}
+.ck-footer .thanks{font-style:italic;font-size:14px;}
+.ck-footer .disclaimer{color:#e8b23d;font-size:12px;margin-top:5px;}
+</style>
+
+<div class="ck-frame">
+<div class="ck-corner" style="top:-2px;left:-2px;">${FLOURISH}</div>
+<div class="ck-corner" style="top:-2px;right:-2px;transform:rotate(90deg);">${FLOURISH}</div>
+<div class="ck-corner" style="bottom:-2px;right:-2px;transform:rotate(180deg);">${FLOURISH}</div>
+<div class="ck-corner" style="bottom:-2px;left:-2px;transform:rotate(270deg);">${FLOURISH}</div>
+
+<div class="ck-frame-inner">
+
+<div class="ck-header">
+<div class="ck-header-left">
+<div class="ck-logo">${ICONS.calculator}</div>
+<div>
+<div class="ck-title">INTEREST <span>REPORT</span></div>
+</div>
+</div>
+<div class="ck-badge">Powered by CK2026</div>
+</div>
+
+<div class="ck-body">
+
+<div class="ck-welcome-box">
+<div class="ck-welcome-item">
+${iconCircle(ICONS.person,32)}
+<div>Welcome,<br><b>${d.name}</b></div>
+</div>
+<div class="ck-divider-v"></div>
+<div class="ck-welcome-item">
+${iconCircle(ICONS.calendar,32)}
+<div>रिपोर्ट दिनांक<br><b>${d.reportDate}</b></div>
+</div>
+<div class="ck-divider-v"></div>
+<div class="ck-welcome-item">
+${iconCircle(ICONS.calendar,32)}
+<div>ब्याज अवधि<br><b>${d.fromDateFormatted} से<br>${d.toDateFormatted} तक</b></div>
+</div>
+</div>
+
+<div class="ck-section-wrap">
+<div class="ck-section-tab">गणना विवरण</div>
+<div class="ck-section-box">
+<div class="ck-info-grid">
+<div class="ck-info-col">
+${iconCircle(ICONS.clock,28)}
+<div><div class="ck-info-label">समय</div><div class="ck-info-value">${d.years} वर्ष ${d.months} महीने ${d.days} दिन</div></div>
+</div>
+<div class="ck-divider-v"></div>
+<div class="ck-info-col">
+${iconCircle(ICONS.rupee,28)}
+<div><div class="ck-info-label">मूलधन</div><div class="ck-info-value">₹${inr(d.principal)}</div></div>
+</div>
+<div class="ck-divider-v"></div>
+<div class="ck-info-col">
+${iconCircle(ICONS.percent,28)}
+<div><div class="ck-info-label">ब्याज दर</div><div class="ck-info-value">${d.rate}% प्रति माह</div></div>
+</div>
+<div class="ck-divider-v"></div>
+<div class="ck-info-col">
+${iconCircle(ICONS.calendar,28)}
+<div><div class="ck-info-label">गणना विधि</div><div class="ck-info-value" style="font-size:13px;">CK2026 Annual<br>Compound Rule</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="ck-section-wrap">
+<div class="ck-section-tab">वर्षवार विवरण</div>
+<div class="ck-section-box" style="padding:0;overflow:hidden;">
+<table class="ck-table">
+<thead><tr><th>वर्ष</th><th>मूलधन (₹)</th><th>ब्याज (₹)</th><th>नया मूलधन (₹)</th></tr></thead>
+<tbody>${yearsRows}</tbody>
+</table>
+</div>
+${extraBoxHTML}
+</div>
+
+<div class="ck-total-box">
+<div class="ck-total-col">
+<div class="ck-total-label">कुल ब्याज</div>
+<div class="ck-total-value">₹${inr(d.totalInterest)}</div>
+</div>
+<div class="ck-divider-v" style="background:#c9a227;"></div>
+<div class="ck-total-col">
+<div class="ck-total-label">कुल रुपये (मूलधन + ब्याज)</div>
+<div class="ck-total-value">₹${inr(d.finalAmount)}</div>
+</div>
+</div>
+
+<div class="ck-method">
+${iconCircle(ICONS.shield,32)}
+<div><b>Calculation Method</b><br>CK2026 Annual Compound Rule</div>
+</div>
+<div class="ck-method-divider">${SWIRL}</div>
+
+</div>
+
+<div class="ck-footer">
+<div class="ck-footer-row">${SWIRL}<div class="thanks">Thank you for using Interest Calculator Pro</div>${SWIRL}</div>
+<div class="disclaimer">यह केवल जानकारी हेतु है, विधिक या वित्तीय सलाह नहीं है।</div>
+</div>
+
+</div>
+</div>
+</div>`;
+
+let pdfFilename = 'Interest_Report_CK2026_'+(d.id||Date.now())+'.pdf';
+
+let opt = {
+margin:[10,10,20,10],
+filename:pdfFilename,
+image:{type:'jpeg',quality:0.98},
+html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff",scrollX:0,scrollY:0},
+jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+pagebreak:{mode:['css','legacy']}
+};
+
+html2pdf().set(opt).from(html, 'string').save().catch(function(err){
+console.log("PDF error:",err);
+alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
+});
+}
+
+function shareWhatsApp(textOverride){
+let text = textOverride || reportText;
+let url="https://wa.me/?text="+encodeURIComponent(text);
+window.open(url,"_blank");
+}
+
+function getHistoryList(){
+try{
+let raw = localStorage.getItem("ck2026_history_list");
+return raw ? JSON.parse(raw) : [];
+}catch(e){
+return [];
+}
+}
+
+function saveHistory(){
+if(!lastCalc){
+alert("कृपया पहले Calculate बटन दबाएं");
+return;
+}
+let list = getHistoryList();
+list.unshift(lastCalc);
+if(list.length>30) list = list.slice(0,30);
+localStorage.setItem("ck2026_history_list", JSON.stringify(list));
+alert("History Save हो गया!");
+}
+
+function clearHistory(){
+if(confirm("क्या आप सारी History हटाना चाहते हैं?")){
+localStorage.removeItem("ck2026_history_list");
+renderHistory();
+}
+}
+
+function findHistoryEntry(id){
+let list = getHistoryList();
+return list.find(function(e){ return e.id===id; });
+}
+
+function downloadPDFFromHistory(id){
+let entry = findHistoryEntry(id);
+if(entry) downloadPDF(entry);
+}
+
+function shareWhatsAppFromHistory(id){
+let entry = findHistoryEntry(id);
+if(entry) shareWhatsApp(entry.reportText);
+}
+
+function renderHistory(){
+let list = getHistoryList();
+let container = document.getElementById("historyList");
+if(list.length===0){
+container.innerHTML = `<div class="history-empty">अभी तक कोई History save नहीं हुई है।</div>`;
+return;
+}
+container.innerHTML = list.map(function(e){
+return `
+<div class="history-card">
+<div class="history-card-main">
+<div class="history-card-top"><span>📅 ${e.calcDate||e.reportDate}</span><span>🕒 ${e.calcTime||""}</span></div>
+<div class="history-row"><span>From: <b>${e.fromDateFormatted}</b></span><span>To: <b>${e.toDateFormatted}</b></span></div>
+<div class="history-row"><span>Principal: <b>₹${inr(e.principal)}</b></span><span>Rate: <b>${e.rate}%</b></span></div>
+<div class="history-row"><span>समय: <b>${e.years} साल ${e.months} महिना ${e.days} दिन</b></span></div>
+<div class="history-row"><span>ब्याज: <b>₹${inr(e.totalInterest)}</b></span><span>कुल राशि: <b>₹${inr(e.finalAmount)}</b></span></div>
+</div>
+<div class="history-actions">
+<button class="history-icon-btn" style="background:#c62828;" onclick="downloadPDFFromHistory(${e.id})">PDF</button>
+<button class="history-icon-btn" style="background:#2e7d32;" onclick="shareWhatsAppFromHistory(${e.id})">💬</button>
+</div>
+</div>`;
+}).join("");
+}
+
+function showPage(name){
+["calculator","history","about"].forEach(function(p){
+document.getElementById("page-"+p).classList.remove("active");
+document.getElementById("nav-"+p).classList.remove("active");
+});
+document.getElementById("page-"+name).classList.add("active");
+document.getElementById("nav-"+name).classList.add("active");
+if(name==="history") renderHistory();
+window.scrollTo(0,0);
+}
+
+// ---- PWA: service worker registration + install prompt ----
+let deferredInstallPrompt=null;
+
+if("serviceWorker" in navigator){
+window.addEventListener("load",function(){
+navigator.serviceWorker.register("service-worker.js").catch(function(err){
+console.log("Service worker registration failed:",err);
+});
+});
+}
+
+window.addEventListener("beforeinstallprompt",function(e){
+e.preventDefault();
+deferredInstallPrompt=e;
+let btn=document.getElementById("installBtn");
+if(btn) btn.style.display="block";
+});
+
+function installApp(){
+if(!deferredInstallPrompt){
+alert("यह app पहले से install हो चुका है, या आपका browser install support नहीं करता।");
+return;
+}
+deferredInstallPrompt.prompt();
+deferredInstallPrompt.userChoice.then(function(){
+deferredInstallPrompt=null;
+document.getElementById("installBtn").style.display="none";
+});
+}
+
+window.addEventListener("appinstalled",function(){
+let btn=document.getElementById("installBtn");
+if(btn) btn.style.display="none";
+});
+
+</script>
+
+</body>
+</html>
