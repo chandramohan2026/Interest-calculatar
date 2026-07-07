@@ -1,10 +1,10 @@
-const CACHE_NAME = "ck2026-interest-calc-v2";
+const CACHE_NAME = "ck2026-interest-calc-v3";
 const ASSETS_TO_CACHE = [
   "./index.html",
   "./manifest.json",
-  "./icon-192.png",
-  "./icon-512.png",
-  "./icon-512-maskable.png"
+  "./icon-192x192.png",
+  "./icon-512x512.png",
+  "./icon-maskable-512x512.png"
 ];
 
 self.addEventListener("install", function (event) {
