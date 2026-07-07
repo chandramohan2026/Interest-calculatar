@@ -598,6 +598,11 @@ ${iconCircle(ICONS.shield,32)}
 
 let container=document.createElement("div");
 container.innerHTML=html;
+container.style.position="fixed";
+container.style.top="0";
+container.style.left="-99999px";
+container.style.zIndex="-1";
+document.body.appendChild(container);
 
 let pdfFilename = 'Interest_Report_CK2026_'+(d.id||Date.now())+'.pdf';
 let marginMM = 10;
@@ -645,7 +650,34 @@ pdf.save(pdfFilename);
 }).catch(function(err){
 console.log("PDF error:",err);
 alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
+}).finally(function(){
+resetViewportAfterPdf(container);
 });
+}
+
+function resetViewportAfterPdf(container){
+// Off-screen PDF container hatao
+if(container && container.parentNode){
+container.parentNode.removeChild(container);
+}
+
+// Mobile/PWA me html2canvas ke baad viewport zoom stuck ho jata hai,
+// isliye usse forcefully reset karo
+let viewportMeta = document.querySelector('meta[name="viewport"]');
+if(viewportMeta){
+viewportMeta.setAttribute('content','width=device-width, initial-scale=1.0, maximum-scale=1.0');
+}
+
+window.scrollTo(0,0);
+
+setTimeout(function(){
+if(viewportMeta){
+viewportMeta.setAttribute('content','width=device-width, initial-scale=1.0');
+}
+window.dispatchEvent(new Event('resize'));
+document.body.style.zoom = "";
+document.documentElement.style.zoom = "";
+},150);
 }
 
 function shareWhatsApp(textOverride){

@@ -1,4 +1,4 @@
-const CACHE_NAME = "ck2026-interest-calc-v1";
+const CACHE_NAME = "ck2026-interest-calc-v2";
 const ASSETS_TO_CACHE = [
   "./index.html",
   "./manifest.json",
