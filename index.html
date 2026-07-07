@@ -443,7 +443,9 @@ let html = `
 <style>
 .ck-pdf{font-family:'Noto Sans Devanagari','Nirmala UI',Arial,sans-serif;width:760px;color:#14395e;background:#ffffff;}
 .ck-pdf *{box-sizing:border-box;}
-.ck-header,.ck-welcome-box,.ck-section-wrap,.ck-total-box,.ck-method,.ck-footer,.ck-extra-box{page-break-inside:avoid;break-inside:avoid;}
+.ck-header,.ck-welcome-box,.ck-total-box,.ck-method,.ck-footer,.ck-extra-box{page-break-inside:avoid;break-inside:avoid;}
+.ck-year-row{page-break-inside:avoid;break-inside:avoid;}
+thead{display:table-header-group;}
 .ck-frame{position:relative;border:1.5px solid #b8912e;border-radius:10px;padding:15px;background:#ffffff;}
 .ck-corner{position:absolute;width:30px;height:30px;z-index:2;}
 .ck-frame-inner{border:2px solid #0a2647;border-radius:6px;overflow:hidden;box-shadow:0 0 0 4px #ffffff, 0 0 0 5px #c9a227;}
@@ -596,88 +598,21 @@ ${iconCircle(ICONS.shield,32)}
 </div>
 </div>`;
 
-let container=document.createElement("div");
-container.innerHTML=html;
-container.style.position="fixed";
-container.style.top="0";
-container.style.left="-99999px";
-container.style.zIndex="-1";
-document.body.appendChild(container);
-
 let pdfFilename = 'Interest_Report_CK2026_'+(d.id||Date.now())+'.pdf';
-let marginMM = 10;
-let pageWidthMM = 210;
-let pageHeightMM = 297;
-let maxWidthMM = pageWidthMM - marginMM*2;
-let maxHeightMM = pageHeightMM - marginMM*2;
-let capturedCanvas = null;
 
-let worker = html2pdf().set({
-margin:0,
+let opt = {
+margin:[10,10,20,10],
 filename:pdfFilename,
-image:{type:'jpeg',quality:1},
-html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff"},
-jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
-}).from(container);
+image:{type:'jpeg',quality:0.98},
+html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff",scrollX:0,scrollY:0},
+jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+pagebreak:{mode:['css','legacy']}
+};
 
-worker.toCanvas().then(function(){
-return worker.get('canvas');
-}).then(function(canvas){
-capturedCanvas = canvas;
-return worker.toPdf();
-}).then(function(){
-return worker.get('pdf');
-}).then(function(pdf){
-let totalPages = pdf.internal.getNumberOfPages();
-for(let i=totalPages;i>1;i--){ pdf.deletePage(i); }
-
-let ratio = capturedCanvas.height / capturedCanvas.width;
-let w = maxWidthMM;
-let h = w * ratio;
-if(h > maxHeightMM){
-h = maxHeightMM;
-w = h / ratio;
-}
-let x = (pageWidthMM - w) / 2;
-let y = marginMM;
-
-pdf.setPage(1);
-pdf.setFillColor(255,255,255);
-pdf.rect(0,0,pageWidthMM,pageHeightMM,'F');
-let imgData = capturedCanvas.toDataURL('image/jpeg',1.0);
-pdf.addImage(imgData,'JPEG',x,y,w,h);
-pdf.save(pdfFilename);
-}).catch(function(err){
+html2pdf().set(opt).from(html, 'string').save().catch(function(err){
 console.log("PDF error:",err);
 alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
-}).finally(function(){
-resetViewportAfterPdf(container);
 });
-}
-
-function resetViewportAfterPdf(container){
-// Off-screen PDF container hatao
-if(container && container.parentNode){
-container.parentNode.removeChild(container);
-}
-
-// Mobile/PWA me html2canvas ke baad viewport zoom stuck ho jata hai,
-// isliye usse forcefully reset karo
-let viewportMeta = document.querySelector('meta[name="viewport"]');
-if(viewportMeta){
-viewportMeta.setAttribute('content','width=device-width, initial-scale=1.0, maximum-scale=1.0');
-}
-
-window.scrollTo(0,0);
-
-setTimeout(function(){
-if(viewportMeta){
-viewportMeta.setAttribute('content','width=device-width, initial-scale=1.0');
-}
-window.dispatchEvent(new Event('resize'));
-document.body.style.zoom = "";
-document.documentElement.style.zoom = "";
-},150);
 }
 
 function shareWhatsApp(textOverride){
