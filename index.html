@@ -67,11 +67,11 @@ body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:v
 
 .welcome-card{max-width:520px;margin:-18px auto 12px auto;background:linear-gradient(135deg,#1c3fae 0%,#0a1a4d 100%);border-radius:16px;position:relative;z-index:20;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 20px rgba(5,10,35,0.5);overflow:hidden;gap:8px;}
 .welcome-left{display:flex;align-items:center;gap:10px;position:relative;z-index:2;min-width:0;}
-.welcome-avatar{width:40px;height:40px;min-width:40px;border-radius:50%;background:linear-gradient(135deg,#2f5bd6,#13237a);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,0.18);}
+.welcome-avatar{width:40px;height:40px;min-width:40px;border-radius:50%;background:linear-gradient(135deg,#2f5bd6,#13237a);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,0.25);}
 .welcome-avatar svg{width:19px;height:19px;}
 .welcome-text{min-width:0;}
 .welcome-greeting{font-size:11px;color:#c7d3f7;}
-.welcome-name{font-size:13.5px;font-weight:800;color:#fff;letter-spacing:0.2px;margin:1px 0;word-break:break-word;}
+.welcome-name{font-size:14px;font-weight:900;color:#ffffff;letter-spacing:0.3px;margin:1px 0;word-break:break-word;}
 .welcome-tagline{font-size:10px;color:#9db1ec;}
 .welcome-graph{flex-shrink:0;position:relative;z-index:1;opacity:0.9;}
 .welcome-graph svg{width:52px;height:40px;}
@@ -85,10 +85,15 @@ body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:v
 }
 .field-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
 .field-icon{width:44px;height:44px;min-width:44px;border-radius:12px;background:linear-gradient(135deg,#2f5bd6,#13237a);display:flex;align-items:center;justify-content:center;color:#fff;}
-.field-content{flex:1;min-width:0;}
+.field-content{flex:1;min-width:0;position:relative;}
 label{font-size:15px;color:var(--row-text);font-weight:700;display:block;margin-bottom:6px;}
 input,select{width:100%;padding:12px;margin:0;border:1.5px solid var(--input-border);border-radius:10px;font-size:14.5px;background:var(--input-bg);color:var(--input-text);color-scheme:var(--color-scheme);}
 input::placeholder{color:var(--placeholder);}
+
+.date-input-wrap{position:relative;}
+.date-input-wrap input{padding-right:42px;}
+.date-pick-icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);cursor:pointer;border-radius:6px;}
+.date-pick-icon:hover,.date-pick-icon:active{color:#f7c948;background:var(--input-border);}
 
 .rate-pills{display:flex;gap:8px;overflow-x:auto;margin:10px 0 4px 0;padding-bottom:2px;}
 .rate-pill{flex:0 0 auto;padding:10px 16px;border-radius:10px;border:1.5px solid var(--input-border);background:var(--input-bg);color:var(--text-muted);font-weight:700;font-size:13.5px;cursor:pointer;}
@@ -231,18 +236,26 @@ button{
 <div class="calc-card">
 
 <div class="field-row">
-<div class="field-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+<div class="field-icon" onclick="openPicker('from')" style="cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
 <div class="field-content">
 <label>From Date</label>
-<input type="date" id="from">
+<div class="date-input-wrap">
+<input type="text" id="from" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="off" oninput="formatDateText(this)">
+<span class="date-pick-icon" onclick="openPicker('from')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+</div>
+<input type="date" id="fromPicker" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" onchange="pickerChanged('from')">
 </div>
 </div>
 
 <div class="field-row">
-<div class="field-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+<div class="field-icon" onclick="openPicker('to')" style="cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
 <div class="field-content">
 <label>To Date</label>
-<input type="date" id="to">
+<div class="date-input-wrap">
+<input type="text" id="to" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="off" oninput="formatDateText(this)">
+<span class="date-pick-icon" onclick="openPicker('to')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+</div>
+<input type="date" id="toPicker" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" onchange="pickerChanged('to')">
 </div>
 </div>
 
@@ -390,6 +403,51 @@ h=h%12; if(h===0)h=12;
 return `${h}:${m} ${ampm}`;
 }
 
+function formatDateText(el){
+let digits = el.value.replace(/\D/g,"").slice(0,8);
+let out = digits;
+if(digits.length>4){
+out = digits.slice(0,2)+"-"+digits.slice(2,4)+"-"+digits.slice(4);
+}else if(digits.length>2){
+out = digits.slice(0,2)+"-"+digits.slice(2);
+}
+el.value = out;
+}
+
+function parseDDMMYYYY(str){
+if(!str) return null;
+let m = str.trim().match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+if(!m) return null;
+let dd=parseInt(m[1],10), mm=parseInt(m[2],10), yyyy=parseInt(m[3],10);
+if(mm<1||mm>12||dd<1||dd>31) return null;
+let dt = new Date(yyyy, mm-1, dd);
+if(dt.getFullYear()!==yyyy || dt.getMonth()!==mm-1 || dt.getDate()!==dd) return null;
+return dt;
+}
+
+function openPicker(which){
+let picker = document.getElementById(which+"Picker");
+let textEl = document.getElementById(which);
+let existing = parseDDMMYYYY(textEl.value);
+if(existing){
+picker.value = existing.getFullYear()+"-"+String(existing.getMonth()+1).padStart(2,'0')+"-"+String(existing.getDate()).padStart(2,'0');
+}
+if(picker.showPicker){
+try{ picker.showPicker(); }catch(e){ picker.focus(); picker.click(); }
+}else{
+picker.focus();
+picker.click();
+}
+}
+
+function pickerChanged(which){
+let picker = document.getElementById(which+"Picker");
+let textEl = document.getElementById(which);
+if(!picker.value) return;
+let parts = picker.value.split("-");
+textEl.value = parts[2]+"-"+parts[1]+"-"+parts[0];
+}
+
 function calculate(){
 
 let fromValue=document.getElementById("from").value;
@@ -402,8 +460,13 @@ alert("कृपया सभी जानकारी भरें");
 return;
 }
 
-let from=new Date(fromValue);
-let to=new Date(toValue);
+let from=parseDDMMYYYY(fromValue);
+let to=parseDDMMYYYY(toValue);
+
+if(!from || !to){
+alert("कृपया From/To Date सही फॉर्मेट में भरें: DD-MM-YYYY (जैसे 15-03-2024)");
+return;
+}
 
 let years=to.getFullYear()-from.getFullYear();
 let months=to.getMonth()-from.getMonth();
@@ -524,14 +587,7 @@ document.getElementById("resultCard").scrollIntoView({behavior:"smooth", block:"
 }, 100);
 }
 
-function downloadPDF(dataOverride){
-
-let d = dataOverride || lastCalc;
-
-if(!d){
-alert("कृपया पहले Calculate बटन दबाएं");
-return;
-}
+function buildReportHtml(d){
 
 let yearsRows = d.yearlyData.map(function(y){
 return `<tr class="ck-year-row">
@@ -726,16 +782,68 @@ jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
 pagebreak:{mode:['css','legacy']}
 };
 
-html2pdf().set(opt).from(html, 'string').save().catch(function(err){
+return {html:html, opt:opt, filename:pdfFilename};
+}
+
+function downloadPDF(dataOverride){
+
+let d = dataOverride || lastCalc;
+
+if(!d){
+alert("कृपया पहले Calculate बटन दबाएं");
+return;
+}
+
+let r = buildReportHtml(d);
+
+html2pdf().set(r.opt).from(r.html, 'string').save().catch(function(err){
 console.log("PDF error:",err);
 alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
 });
 }
 
-function shareWhatsApp(textOverride){
-let text = textOverride || reportText;
-let url="https://wa.me/?text="+encodeURIComponent(text);
-window.open(url,"_blank");
+function shareWhatsApp(dataOverride){
+
+let d = dataOverride || lastCalc;
+
+if(!d){
+alert("कृपया पहले Calculate बटन दबाएं");
+return;
+}
+
+let r = buildReportHtml(d);
+let waText = d.reportText || reportText;
+
+html2pdf().set(r.opt).from(r.html, 'string').outputPdf('blob').then(function(blob){
+
+let file = new File([blob], r.filename, {type:"application/pdf"});
+
+if(navigator.canShare && navigator.canShare({files:[file]})){
+navigator.share({
+files:[file],
+title:"Interest Report",
+text:waText
+}).catch(function(err){
+console.log("Share cancelled/error:", err);
+});
+}else{
+// Fallback for browsers/devices that can't share files directly (e.g. desktop)
+let a = document.createElement('a');
+let blobUrl = URL.createObjectURL(blob);
+a.href = blobUrl;
+a.download = r.filename;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 3000);
+alert("आपका PDF डाउनलोड हो गया है। कृपया WhatsApp खोलें और डाउनलोड हुई PDF फाइल को अटैच करके भेजें।");
+window.open("https://wa.me/?text="+encodeURIComponent(waText), "_blank");
+}
+
+}).catch(function(err){
+console.log("PDF generation error:", err);
+alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
+});
 }
 
 function getHistoryList(){
@@ -778,7 +886,7 @@ if(entry) downloadPDF(entry);
 
 function shareWhatsAppFromHistory(id){
 let entry = findHistoryEntry(id);
-if(entry) shareWhatsApp(entry.reportText);
+if(entry) shareWhatsApp(entry);
 }
 
 function renderHistory(){
