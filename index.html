@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#060a16">
+<meta name="theme-color" content="#eefaf3">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
@@ -19,6 +19,24 @@
 <style>
 *{box-sizing:border-box;}
 :root{
+  --bg:#eefaf3;
+  --text:#16281f;
+  --text-muted:#4b6b58;
+  --text-muted2:#6b8a78;
+  --card-bg:#ffffff;
+  --card-border:#d9f0e3;
+  --input-bg:#f6fdf9;
+  --input-border:#cdeedb;
+  --input-text:#16281f;
+  --placeholder:#9fc4b0;
+  --row-text:#234a37;
+  --nav-bg:#ffffff;
+  --nav-border:#d9f0e3;
+  --nav-inactive:#6b8a78;
+  --shadow:rgba(20,80,50,0.10);
+  --color-scheme:light;
+}
+body.dark-mode{
   --bg:#060a16;
   --text:#eef2fb;
   --text-muted:#9aa8c7;
@@ -36,24 +54,14 @@
   --shadow:rgba(0,0,0,0.35);
   --color-scheme:dark;
 }
-body.light-mode{
-  --bg:#eef3ff;
-  --text:#1a2540;
-  --text-muted:#5c6b8a;
-  --text-muted2:#8892a6;
-  --card-bg:#ffffff;
-  --card-border:#e2e8f2;
-  --input-bg:#fbfcfe;
-  --input-border:#dfe6f2;
-  --input-text:#1a2540;
-  --placeholder:#9aa8c7;
-  --row-text:#14395e;
-  --nav-bg:#ffffff;
-  --nav-border:#e2e8f2;
-  --nav-inactive:#8fa0c2;
-  --shadow:rgba(20,40,90,0.12);
-  --color-scheme:light;
-}
+body.theme-green .app-title .pro-tag,body.theme-green .pro-tag{color:#34d399;}
+body.theme-green .avatar-badge{border-color:#34d399;color:#34d399;background:rgba(52,211,153,0.08);}
+body.theme-green .welcome-card{background:linear-gradient(135deg,#123a26 0%,#03130b 100%);}
+body.theme-green .welcome-avatar{background:radial-gradient(circle,rgba(52,211,153,0.25),rgba(52,211,153,0.05));border-color:rgba(52,211,153,0.5);}
+body.theme-green .bottom-nav{background:var(--nav-bg);border-top:1px solid var(--nav-border);box-shadow:0 -2px 8px var(--shadow);}
+body.theme-green .nav-item{color:var(--nav-inactive);}
+body.theme-green .nav-item.active{background:#22c55e;color:#ffffff;}
+
 body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:var(--text);transition:background 0.25s,color 0.25s;}
 
 .topbar{background:#060a16;color:#fff;padding:14px 18px 30px 18px;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,0.05);}
@@ -62,6 +70,7 @@ body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:v
 .hamburger{font-size:22px;line-height:1;cursor:pointer;color:#fff;}
 .app-title{font-size:18px;font-weight:800;color:#fff;}
 .app-title .pro-tag{color:#f7c948;}
+.pro-tag{color:#f7c948;}
 .app-subtitle{font-size:11px;color:#9aa8c7;margin-top:3px;font-weight:600;display:flex;align-items:center;gap:5px;}
 .avatar-badge{width:36px;height:36px;min-width:36px;border-radius:50%;border:2px solid #f7c948;display:flex;align-items:center;justify-content:center;color:#f7c948;font-weight:800;font-size:12px;letter-spacing:0.5px;cursor:pointer;background:rgba(247,201,72,0.06);}
 
@@ -113,15 +122,15 @@ button{
 .feature-title{font-weight:700;font-size:12.5px;color:var(--text);}
 .feature-sub{font-size:10.5px;color:var(--text-muted2);margin-top:2px;}
 
-.result-card{max-width:520px;margin:15px auto;background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:0 1px 6px var(--shadow);border:1px solid var(--card-border);}
-.result-card-header{background:linear-gradient(135deg,#1c3fae,#0a1a4d);color:#fff;padding:12px 16px;font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px;}
-.result-body{padding:16px;}
-.result-row{display:flex;justify-content:space-between;padding:4px 0;font-size:14px;color:var(--row-text);}
-.result-row b{font-weight:700;color:var(--text);}
-.result-divider{border-top:1px solid var(--card-border);margin:8px 0;}
-.result-section-title{color:#f7c948;font-weight:700;margin:10px 0 6px 0;text-align:center;font-size:14px;}
-.result-thanks{text-align:center;color:var(--text-muted);font-weight:700;margin-top:14px;font-size:13px;line-height:1.6;}
-.result-datetime{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-muted2);margin-bottom:8px;}
+.result-card{max-width:520px;margin:15px auto;background:#241a3d;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.45);border:1.5px solid #7c5cd6;}
+.result-card-header{background:linear-gradient(90deg,#8b5cf6,#4c1d95);color:#fff;padding:16px 18px;font-weight:800;font-size:17px;display:flex;align-items:center;gap:12px;letter-spacing:0.5px;}
+.result-body{padding:18px 20px;}
+.result-row{display:flex;justify-content:space-between;padding:6px 0;font-size:15px;color:#c9bdea;}
+.result-row b{font-weight:800;color:#ffffff;font-size:16px;}
+.result-divider{border-top:1px solid rgba(255,255,255,0.12);margin:10px 0;}
+.result-section-title{color:#f7c948;font-weight:700;margin:14px 0 10px 0;text-align:center;font-size:15px;}
+.result-thanks{text-align:center;color:#c9bdea;font-weight:700;margin-top:16px;font-size:14px;line-height:1.7;}
+.result-datetime{display:flex;justify-content:space-between;font-size:13px;color:#a99fcf;margin-bottom:10px;}
 
 .action-row{display:flex;gap:8px;padding:0 16px 16px 16px;}
 .action-row button{flex:1;font-size:12px;padding:12px 4px;margin-top:0;border-radius:10px;}
@@ -129,22 +138,34 @@ button{
 .wa-btn{background:#2e7d32;}
 .save-btn{background:#37474f;}
 
-.history-header{background:linear-gradient(135deg,#1c3fae,#0a1a4d);color:#fff;padding:14px 16px;font-weight:700;display:flex;align-items:center;gap:10px;margin:15px;border-radius:8px;font-size:15px;}
+.history-header{background:linear-gradient(120deg,#155c36,#08301c);color:#fff;padding:14px 16px;font-weight:700;display:flex;align-items:center;gap:10px;margin:15px;border-radius:12px;font-size:15px;}
 .history-list{padding:0 15px 15px 15px;}
-.history-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:14px;margin-bottom:14px;box-shadow:0 1px 4px var(--shadow);display:flex;justify-content:space-between;gap:10px;}
+.history-card{background:#eefaf1;border:1px solid #cdeedb;border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 2px 8px rgba(20,80,50,0.12);display:flex;justify-content:space-between;gap:10px;}
 .history-card-main{flex:1;min-width:0;}
-.history-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#f7c948;font-weight:700;font-size:14px;}
-.history-row{display:flex;gap:16px;font-size:12.5px;color:var(--row-text);margin-bottom:4px;flex-wrap:wrap;}
-.history-row span b{color:var(--text);}
+.history-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#0e7a3e;font-weight:700;font-size:14px;}
+.history-row{display:flex;gap:16px;font-size:12.5px;color:#274c3b;margin-bottom:4px;flex-wrap:wrap;}
+.history-row span b{color:#123024;}
 .history-actions{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;}
-.history-icon-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:10px;font-weight:800;}
+.history-icon-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:10px;font-weight:800;background:#16a34a;}
 .history-empty{text-align:center;color:var(--text-muted2);padding:50px 20px;font-size:14px;}
 .history-clear{text-align:center;margin:0 15px 5px 15px;}
-.history-clear a{color:#ff6b6b;font-size:13px;text-decoration:underline;cursor:pointer;}
+.history-clear a{color:#0e7a3e;font-size:13px;text-decoration:underline;cursor:pointer;}
 
-.about-card{max-width:520px;margin:20px auto;background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:24px 20px;text-align:center;}
-.about-card h3{color:#f7c948;margin-bottom:4px;}
-.about-card p{color:var(--text-muted);font-size:13.5px;line-height:1.7;}
+.about-card{max-width:520px;margin:20px auto;background:linear-gradient(160deg,#123a26 0%,#03130b 100%);border:1px solid rgba(52,211,153,0.3);border-radius:20px;padding:30px 22px;text-align:center;}
+.about-icon-circle{width:78px;height:78px;border-radius:50%;border:2px solid rgba(255,255,255,0.55);background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 18px auto;box-shadow:0 0 0 10px rgba(52,211,153,0.06);}
+.about-card h3{color:#ffffff;margin:0 0 10px 0;font-size:20px;font-weight:800;}
+.about-divider{width:70px;height:2px;background:rgba(255,255,255,0.25);margin:0 auto 16px auto;position:relative;}
+.about-divider::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;background:#34d399;border-radius:50%;transform:translate(-50%,-50%);}
+.about-card p{color:#cfe9db;font-size:13.5px;line-height:1.8;margin:0;}
+.about-hr{border-top:1px solid rgba(255,255,255,0.15);margin:22px 0;}
+.about-features{display:flex;justify-content:space-between;gap:6px;}
+.about-feature-item{flex:1;}
+.about-feature-circle{width:48px;height:48px;border-radius:50%;background:#1d5a3c;display:flex;align-items:center;justify-content:center;margin:0 auto 8px auto;font-size:19px;}
+.about-feature-label{color:#e6f7ee;font-size:12px;font-weight:600;line-height:1.4;}
+.about-badge{display:inline-flex;align-items:center;gap:12px;background:rgba(34,197,94,0.18);border:1px solid rgba(52,211,153,0.4);border-radius:40px;padding:10px 24px;margin-top:6px;}
+.about-badge-icon{font-size:20px;}
+.about-badge b{color:#ffffff;font-size:14.5px;}
+.about-badge .about-version{color:#bfe3cd;font-size:11.5px;display:block;margin-top:1px;}
 
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--nav-bg);border-top:1px solid var(--nav-border);display:flex;z-index:80;box-shadow:0 -2px 8px var(--shadow);padding:6px;gap:4px;}
 .nav-item{flex:1;text-align:center;padding:9px 0 9px 0;color:var(--nav-inactive);font-size:11px;cursor:pointer;border-radius:14px;font-weight:600;}
@@ -169,7 +190,7 @@ button{
 </style>
 </head>
 
-<body>
+<body class="theme-green">
 
 <div class="topbar">
 <div class="topbar-top">
@@ -337,13 +358,35 @@ button{
 <!-- ===== ABOUT PAGE ===== -->
 <div id="page-about" class="page">
 <div class="about-card">
-<h3>Interest Calculator Pro</h3>
+<div class="about-icon-circle">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+</div>
+<h3>Interest Calculator <span class="pro-tag">Pro</span></h3>
+<div class="about-divider"></div>
 <p>
 CK2026 Annual Compound Rule ke hisab se interest calculate karne ka tool.<br><br>
-Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par share karta hai, aur history save rakhta hai.<br><br>
-<b>Powered by CK2026</b><br>
-Version 1.0
+Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par share karta hai, aur history save rakhta hai.
 </p>
+<div class="about-hr"></div>
+<div class="about-features">
+<div class="about-feature-item">
+<div class="about-feature-circle">📄</div>
+<div class="about-feature-label">Professional<br>PDF Report</div>
+</div>
+<div class="about-feature-item">
+<div class="about-feature-circle">💬</div>
+<div class="about-feature-label">WhatsApp<br>par Share</div>
+</div>
+<div class="about-feature-item">
+<div class="about-feature-circle">🕒</div>
+<div class="about-feature-label">History<br>hamesha Save</div>
+</div>
+</div>
+<div class="about-hr"></div>
+<div class="about-badge">
+<span class="about-badge-icon">🛡️</span>
+<span><b>Powered by CK2026</b><span class="about-version">Version 1.0</span></span>
+</div>
 </div>
 </div>
 
@@ -907,8 +950,8 @@ return `
 <div class="history-row"><span>ब्याज: <b>₹${inr(e.totalInterest)}</b></span><span>कुल राशि: <b>₹${inr(e.finalAmount)}</b></span></div>
 </div>
 <div class="history-actions">
-<button class="history-icon-btn" style="background:#c62828;" onclick="downloadPDFFromHistory(${e.id})">PDF</button>
-<button class="history-icon-btn" style="background:#2e7d32;" onclick="shareWhatsAppFromHistory(${e.id})">💬</button>
+<button class="history-icon-btn" onclick="downloadPDFFromHistory(${e.id})">PDF</button>
+<button class="history-icon-btn" onclick="shareWhatsAppFromHistory(${e.id})">💬</button>
 </div>
 </div>`;
 }).join("");
@@ -953,26 +996,26 @@ let text = "मुझे Interest Calculator Pro app बहुत पसंद �
 window.open("https://wa.me/?text="+encodeURIComponent(text), "_blank");
 }
 
-// ---- Dark / Light mode toggle ----
+// ---- Dark / Light mode toggle (default = light mint) ----
 function applyTheme(mode){
-if(mode==="light"){
-document.body.classList.add("light-mode");
+if(mode==="dark"){
+document.body.classList.add("dark-mode");
 }else{
-document.body.classList.remove("light-mode");
+document.body.classList.remove("dark-mode");
 }
 let metaTheme = document.querySelector('meta[name="theme-color"]');
-if(metaTheme) metaTheme.setAttribute("content", mode==="light" ? "#eef3ff" : "#060a16");
+if(metaTheme) metaTheme.setAttribute("content", mode==="dark" ? "#060a16" : "#eefaf3");
 localStorage.setItem("ck2026_theme", mode);
 }
 function toggleTheme(){
-let current = localStorage.getItem("ck2026_theme")==="light" ? "light" : "dark";
-let next = current==="light" ? "dark" : "light";
+let current = localStorage.getItem("ck2026_theme")==="dark" ? "dark" : "light";
+let next = current==="dark" ? "light" : "dark";
 applyTheme(next);
 closeDrawer();
 }
 (function(){
 let saved = localStorage.getItem("ck2026_theme");
-if(saved==="light") applyTheme("light");
+if(saved==="dark") applyTheme("dark");
 })();
 
 // ---- PWA: service worker registration + install prompt ----
