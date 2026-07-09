@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#eefaf3">
+<meta name="theme-color" content="#060a16">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
@@ -62,17 +62,17 @@ body.theme-green .bottom-nav{background:var(--nav-bg);border-top:1px solid var(-
 body.theme-green .nav-item{color:var(--nav-inactive);}
 body.theme-green .nav-item.active{background:#22c55e;color:#ffffff;}
 
-body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:var(--text);transition:background 0.25s,color 0.25s;}
+body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:78px;color:var(--text);transition:background 0.25s,color 0.25s;font-size:15.5px;}
 
 .topbar{background:#060a16;color:#fff;padding:14px 18px 30px 18px;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,0.05);}
 .topbar-top{display:flex;align-items:flex-start;justify-content:space-between;}
 .topbar-left{display:flex;align-items:center;gap:12px;}
 .hamburger{font-size:22px;line-height:1;cursor:pointer;color:#fff;}
-.app-title{font-size:18px;font-weight:800;color:#fff;}
+.app-title{font-size:20.5px;font-weight:800;color:#fff;}
 .app-title .pro-tag{color:#f7c948;}
 .pro-tag{color:#f7c948;}
-.app-subtitle{font-size:11px;color:#9aa8c7;margin-top:3px;font-weight:600;display:flex;align-items:center;gap:5px;}
-.avatar-badge{width:36px;height:36px;min-width:36px;border-radius:50%;border:2px solid #f7c948;display:flex;align-items:center;justify-content:center;color:#f7c948;font-weight:800;font-size:12px;letter-spacing:0.5px;cursor:pointer;background:rgba(247,201,72,0.06);}
+.app-subtitle{font-size:12.5px;color:#9aa8c7;margin-top:4px;font-weight:600;display:flex;align-items:center;gap:5px;}
+.avatar-badge{width:40px;height:40px;min-width:40px;border-radius:50%;border:2px solid #f7c948;display:flex;align-items:center;justify-content:center;color:#f7c948;font-weight:800;font-size:13px;letter-spacing:0.5px;cursor:pointer;background:rgba(247,201,72,0.06);}
 
 .welcome-card{max-width:520px;margin:-18px auto 12px auto;background:linear-gradient(135deg,#1c3fae 0%,#0a1a4d 100%);border-radius:16px;position:relative;z-index:20;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 20px rgba(5,10,35,0.5);overflow:hidden;gap:8px;}
 .welcome-left{display:flex;align-items:center;gap:10px;position:relative;z-index:2;min-width:0;}
@@ -88,6 +88,8 @@ body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:v
 .page{display:none;}
 .page.active{display:block;}
 
+.mode-badge{max-width:520px;margin:0 auto 16px auto;background:linear-gradient(120deg,#155c36,#08301c);border:1.5px solid rgba(52,211,153,0.5);color:#fff;text-align:center;padding:14px 16px;border-radius:14px;font-weight:900;font-size:17.5px;letter-spacing:0.4px;}
+
 .calc-card{
     max-width:520px;margin:0 auto 15px auto;background:linear-gradient(160deg,#123a26 0%,#03130b 100%);position:relative;z-index:20;
     padding:24px 20px;border-radius:22px;box-shadow:0 8px 24px rgba(20,80,50,0.18);border:1px solid rgba(52,211,153,0.3);
@@ -95,8 +97,8 @@ body{font-family:Arial;margin:0;background:var(--bg);padding-bottom:70px;color:v
 .field-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
 .field-icon{width:44px;height:44px;min-width:44px;border-radius:12px;background:linear-gradient(135deg,#1d5a3c,#0a2b1c);display:flex;align-items:center;justify-content:center;color:#fff;border:1px solid rgba(52,211,153,0.35);}
 .field-content{flex:1;min-width:0;position:relative;}
-label{font-size:15px;color:#cfe9db;font-weight:700;display:block;margin-bottom:6px;}
-input,select{width:100%;padding:12px;margin:0;border:1.5px solid rgba(52,211,153,0.25);border-radius:10px;font-size:14.5px;background:rgba(255,255,255,0.06);color:#eafdf1;color-scheme:dark;}
+label{font-size:16.5px;color:#cfe9db;font-weight:700;display:block;margin-bottom:7px;}
+input,select{width:100%;padding:14px;margin:0;border:1.5px solid rgba(52,211,153,0.25);border-radius:10px;font-size:16px;background:rgba(255,255,255,0.06);color:#eafdf1;color-scheme:dark;}
 input::placeholder{color:#7fa895;}
 
 .date-input-wrap{position:relative;}
@@ -105,32 +107,33 @@ input::placeholder{color:#7fa895;}
 .date-pick-icon:hover,.date-pick-icon:active{color:#34d399;background:rgba(52,211,153,0.15);}
 
 .rate-pills{display:flex;gap:8px;overflow-x:auto;margin:10px 0 4px 0;padding-bottom:2px;}
-.rate-pill{flex:0 0 auto;padding:10px 16px;border-radius:10px;border:1.5px solid rgba(52,211,153,0.25);background:rgba(255,255,255,0.06);color:#9fc4b0;font-weight:700;font-size:13.5px;cursor:pointer;}
+.rate-pill{flex:0 0 auto;padding:11px 18px;border-radius:10px;border:1.5px solid rgba(52,211,153,0.25);background:rgba(255,255,255,0.06);color:#9fc4b0;font-weight:700;font-size:14.5px;cursor:pointer;}
 .rate-pill.active{background:linear-gradient(135deg,#1d5a3c,#0a2b1c);color:#fff;border-color:#34d399;}
 
 button{
-    width:100%;padding:14px;margin-top:8px;
+    width:100%;padding:16px;margin-top:8px;
     border:none;border-radius:12px;
-    background:#1976d2;color:white;font-size:15px;font-weight:700;
+    background:#1976d2;color:white;font-size:16px;font-weight:700;
 }
-.calc-btn{background:linear-gradient(90deg,#22c55e,#0e7a3e);font-size:16px;letter-spacing:0.5px;}
+.calc-btn{background:linear-gradient(90deg,#22c55e,#0e7a3e);font-size:17.5px;letter-spacing:0.5px;padding:18px;}
 .secondary{background:#444;}
 
 .feature-row{max-width:520px;margin:0 auto 15px auto;background:linear-gradient(160deg,#123a26 0%,#03130b 100%);border:1px solid rgba(52,211,153,0.3);border-radius:18px;display:flex;padding:20px 8px;}
 .feature-item{flex:1;text-align:center;}
 .feature-circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px auto;background:#1d5a3c !important;}
-.feature-title{font-weight:700;font-size:12.5px;color:#ffffff;}
-.feature-sub{font-size:10.5px;color:#a9d4bc;margin-top:2px;}
+.feature-title{font-weight:700;font-size:13.5px;color:#ffffff;}
+.feature-sub{font-size:11.5px;color:#a9d4bc;margin-top:3px;}
 
 .result-card{max-width:520px;margin:15px auto;background:#241a3d;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.45);border:1.5px solid #7c5cd6;}
-.result-card-header{background:linear-gradient(90deg,#8b5cf6,#4c1d95);color:#fff;padding:16px 18px;font-weight:800;font-size:17px;display:flex;align-items:center;gap:12px;letter-spacing:0.5px;}
-.result-body{padding:18px 20px;}
-.result-row{display:flex;justify-content:space-between;padding:6px 0;font-size:15px;color:#c9bdea;}
-.result-row b{font-weight:800;color:#ffffff;font-size:16px;}
+.result-card-header{background:linear-gradient(90deg,#8b5cf6,#4c1d95);color:#fff;padding:18px 20px;font-weight:800;font-size:19px;display:flex;align-items:center;gap:12px;letter-spacing:0.5px;}
+.result-body{padding:20px 22px;}
+.result-row{display:flex;justify-content:space-between;padding:7px 0;font-size:16px;color:#c9bdea;}
+.result-row b{font-weight:800;color:#ffffff;font-size:17.5px;}
 .result-divider{border-top:1px solid rgba(255,255,255,0.12);margin:10px 0;}
 .result-section-title{color:#f7c948;font-weight:700;margin:14px 0 10px 0;text-align:center;font-size:15px;}
 .result-thanks{text-align:center;color:#c9bdea;font-weight:700;margin-top:16px;font-size:14px;line-height:1.7;}
 .result-datetime{display:flex;justify-content:space-between;font-size:13px;color:#a99fcf;margin-bottom:10px;}
+.result-type-badge{text-align:center;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.3);color:#fff;font-weight:900;font-size:18.5px;padding:12px 16px;border-radius:22px;margin-bottom:16px;letter-spacing:0.3px;}
 
 .action-row{display:flex;gap:8px;padding:0 16px 16px 16px;}
 .action-row button{flex:1;font-size:12px;padding:12px 4px;margin-top:0;border-radius:10px;}
@@ -143,6 +146,7 @@ button{
 .history-card{background:#eefaf1;border:1px solid #cdeedb;border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 2px 8px rgba(20,80,50,0.12);display:flex;justify-content:space-between;gap:10px;}
 .history-card-main{flex:1;min-width:0;}
 .history-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#0e7a3e;font-weight:700;font-size:14px;}
+.history-type-tag{display:inline-block;background:rgba(14,122,62,0.12);color:#0e7a3e;font-weight:700;font-size:11px;padding:3px 10px;border-radius:10px;margin-bottom:8px;}
 .history-row{display:flex;gap:16px;font-size:12.5px;color:#274c3b;margin-bottom:4px;flex-wrap:wrap;}
 .history-row span b{color:#123024;}
 .history-actions{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;}
@@ -153,10 +157,10 @@ button{
 
 .about-card{max-width:520px;margin:20px auto;background:linear-gradient(160deg,#123a26 0%,#03130b 100%);border:1px solid rgba(52,211,153,0.3);border-radius:20px;padding:30px 22px;text-align:center;}
 .about-icon-circle{width:78px;height:78px;border-radius:50%;border:2px solid rgba(255,255,255,0.55);background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 18px auto;box-shadow:0 0 0 10px rgba(52,211,153,0.06);}
-.about-card h3{color:#ffffff;margin:0 0 10px 0;font-size:20px;font-weight:800;}
+.about-card h3{color:#ffffff;margin:0 0 10px 0;font-size:22.5px;font-weight:800;}
 .about-divider{width:70px;height:2px;background:rgba(255,255,255,0.25);margin:0 auto 16px auto;position:relative;}
 .about-divider::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;background:#34d399;border-radius:50%;transform:translate(-50%,-50%);}
-.about-card p{color:#cfe9db;font-size:13.5px;line-height:1.8;margin:0;}
+.about-card p{color:#cfe9db;font-size:14.5px;line-height:1.85;margin:0;}
 .about-hr{border-top:1px solid rgba(255,255,255,0.15);margin:22px 0;}
 .about-features{display:flex;justify-content:space-between;gap:6px;}
 .about-feature-item{flex:1;}
@@ -167,8 +171,9 @@ button{
 .about-badge b{color:#ffffff;font-size:14.5px;}
 .about-badge .about-version{color:#bfe3cd;font-size:11.5px;display:block;margin-top:1px;}
 
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--nav-bg);border-top:1px solid var(--nav-border);display:flex;z-index:80;box-shadow:0 -2px 8px var(--shadow);padding:6px;gap:4px;}
-.nav-item{flex:1;text-align:center;padding:9px 0 9px 0;color:var(--nav-inactive);font-size:11px;cursor:pointer;border-radius:14px;font-weight:600;}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--nav-bg);border-top:1px solid var(--nav-border);display:flex;z-index:80;box-shadow:0 -2px 8px var(--shadow);padding:7px;gap:3px;}
+.nav-item{flex:1;text-align:center;padding:9px 2px 9px 2px;color:var(--nav-inactive);font-size:10.5px;cursor:pointer;border-radius:14px;font-weight:700;line-height:1.25;}
+.nav-item svg{width:19px;height:19px;}
 .nav-item svg{display:block;margin:0 auto 3px auto;}
 .nav-item.active{color:#0a1a4d;background:#f7c948;}
 
@@ -187,10 +192,21 @@ button{
 .drawer-list li:active,.drawer-list li:hover{background:var(--input-bg);}
 .drawer-list li .emoji{font-size:17px;width:22px;text-align:center;}
 .drawer-footer{padding:14px 20px;font-size:11px;color:var(--text-muted2);text-align:center;border-top:1px solid var(--card-border);}
+
+/* ===== TERMS & CONDITIONS MODAL ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;display:none;align-items:flex-end;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:linear-gradient(160deg,#123a26 0%,#03130b 100%);width:100%;max-width:560px;max-height:82vh;border-radius:20px 20px 0 0;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(52,211,153,0.3);box-shadow:0 -8px 30px rgba(0,0,0,0.5);}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:linear-gradient(120deg,#155c36,#08301c);color:#fff;font-weight:800;font-size:16px;flex-shrink:0;}
+.modal-close{cursor:pointer;font-size:18px;opacity:0.85;}
+.modal-body{padding:18px 20px 30px 20px;overflow-y:auto;color:#dff5e8;font-size:13.5px;line-height:1.7;}
+.modal-body h4{color:#34d399;margin:16px 0 6px 0;font-size:14.5px;}
+.modal-body h4:first-of-type{margin-top:0;}
+.modal-effective{color:#9fc4b0;font-size:12.5px;margin-bottom:10px;}
 </style>
 </head>
 
-<body class="theme-green">
+<body class="theme-green dark-mode">
 
 <div class="topbar">
 <div class="topbar-top">
@@ -198,7 +214,7 @@ button{
 <span class="hamburger" onclick="openDrawer()">☰</span>
 <div>
 <div class="app-title">Interest Calculator <span class="pro-tag">Pro</span></div>
-<div class="app-subtitle">Advanced Financial Planning &amp; Analysis <span>✅</span></div>
+<div class="app-subtitle"><span data-i18n="subtitle">Advanced Financial Planning &amp; Analysis</span> <span>✅</span></div>
 </div>
 </div>
 <div class="avatar-badge" title="CHANDRAMOHAN SINGH">CS</div>
@@ -216,16 +232,53 @@ button{
 <div class="drawer-sub">Interest Calculator Pro</div>
 </div>
 <ul class="drawer-list">
-<li onclick="menuGo('calculator')"><span class="emoji">🏠</span> Dashboard</li>
-<li onclick="menuGo('calculator')"><span class="emoji">🧮</span> Interest Calculator</li>
-<li onclick="menuGo('history')"><span class="emoji">📜</span> Calculation History</li>
-<li onclick="menuGo('history')"><span class="emoji">📄</span> Reports</li>
-<li onclick="menuDownload()"><span class="emoji">📤</span> Download (PDF / WhatsApp)</li>
-<li onclick="toggleTheme()"><span class="emoji">🌙</span> <span id="themeMenuLabel">Dark / Light Mode</span></li>
-<li onclick="rateWebsite()"><span class="emoji">⭐</span> Rate Website</li>
-<li onclick="menuGo('about')"><span class="emoji">ℹ️</span> About Developer</li>
+<li onclick="menuGo('calculator')"><span class="emoji">🏠</span> <span data-i18n="menu_dashboard">Dashboard</span></li>
+<li onclick="menuGo('calculator')"><span class="emoji">🧮</span> <span data-i18n="menu_calculator">Interest Calculator</span></li>
+<li onclick="menuGo('history')"><span class="emoji">📜</span> <span data-i18n="menu_history">Calculation History</span></li>
+<li onclick="menuGo('history')"><span class="emoji">📄</span> <span data-i18n="menu_reports">Reports</span></li>
+<li onclick="toggleInterestMode()"><span class="emoji">➗</span> <span id="modeMenuLabel">Simple Interest</span></li>
+<li onclick="menuDownload()"><span class="emoji">📤</span> <span data-i18n="menu_download">Download (PDF / WhatsApp)</span></li>
+<li onclick="toggleLanguage()"><span class="emoji">🌐</span> <span id="langMenuLabel" data-i18n="menu_language">Hindi / English</span></li>
+<li onclick="appShare()"><span class="emoji">📲</span> <span data-i18n="menu_appshare">App Share</span></li>
+<li onclick="rateWebsite()"><span class="emoji">⭐</span> <span data-i18n="menu_rate">Rate Website</span></li>
+<li onclick="openTerms()"><span class="emoji">📋</span> <span data-i18n="menu_terms">Terms &amp; Conditions</span></li>
+<li onclick="menuGo('about')"><span class="emoji">ℹ️</span> <span data-i18n="menu_aboutdev">About Developer</span></li>
 </ul>
 <div class="drawer-footer">Powered by CK2026 · v1.0</div>
+</div>
+
+<div class="modal-overlay" id="termsOverlay" onclick="closeTerms()">
+<div class="modal-box" onclick="event.stopPropagation()">
+<div class="modal-header">
+<span data-i18n="terms_header">📋 Terms &amp; Conditions</span>
+<span class="modal-close" onclick="closeTerms()">✕</span>
+</div>
+<div class="modal-body" data-i18n-html="terms_body">
+<p class="modal-effective">Effective Date: 09 July 2026</p>
+<p>Welcome to Interest Calculator Pro. By using this website, you agree to the following Terms &amp; Conditions.</p>
+
+<h4>1. Information Only</h4>
+<p>This website provides Compound Interest calculations for estimation purposes only. Results are generated using the values entered by the user and standard calculation formulas. Actual values may differ depending on the policies, fees, or calculation methods used by banks or financial institutions.</p>
+
+<h4>2. Accuracy</h4>
+<p>We strive to provide accurate and reliable calculations. However, we do not guarantee that every result will be completely error-free.</p>
+
+<h4>3. User Responsibility</h4>
+<p>Users are responsible for verifying all calculation results before making any financial, investment, or business decisions.</p>
+
+<h4>4. Privacy</h4>
+<p>We respect your privacy. Information entered into the calculator is used only for calculations and is not sold to third parties.</p>
+
+<h4>5. No Financial Advice</h4>
+<p>This website is designed for informational purposes only and does not provide legal, financial, tax, or investment advice.</p>
+
+<h4>6. Website Updates</h4>
+<p>We may update, improve, or modify this website, its features, or these Terms &amp; Conditions at any time without prior notice.</p>
+
+<h4>7. Copyright</h4>
+<p>The design, logo, content, and branding of Interest Calculator Pro are protected by copyright laws. Unauthorized copying, modification, or redistribution is prohibited.</p>
+</div>
+</div>
 </div>
 
 <div class="welcome-card">
@@ -234,9 +287,9 @@ button{
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
 </div>
 <div class="welcome-text">
-<div class="welcome-greeting">Welcome back,</div>
+<div class="welcome-greeting" data-i18n="welcome_greeting">Welcome back,</div>
 <div class="welcome-name">CHANDRAMOHAN SINGH</div>
-<div class="welcome-tagline">Smart Calculations, Better Decisions</div>
+<div class="welcome-tagline" data-i18n="welcome_tagline">Smart Calculations, Better Decisions</div>
 </div>
 </div>
 <div class="welcome-graph">
@@ -254,12 +307,16 @@ button{
 <!-- ===== CALCULATOR PAGE ===== -->
 <div id="page-calculator" class="page active">
 
+<div class="mode-badge" id="modeBadge">
+<span id="modeBadgeIcon">🧮</span> <span id="modeBadgeText">Compound Interest Calculator</span>
+</div>
+
 <div class="calc-card">
 
 <div class="field-row">
 <div class="field-icon" onclick="openPicker('from')" style="cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
 <div class="field-content">
-<label>From Date</label>
+<label data-i18n="label_from">From Date</label>
 <div class="date-input-wrap">
 <input type="text" id="from" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="off" oninput="formatDateText(this)">
 <span class="date-pick-icon" onclick="openPicker('from')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
@@ -271,7 +328,7 @@ button{
 <div class="field-row">
 <div class="field-icon" onclick="openPicker('to')" style="cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
 <div class="field-content">
-<label>To Date</label>
+<label data-i18n="label_to">To Date</label>
 <div class="date-input-wrap">
 <input type="text" id="to" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="off" oninput="formatDateText(this)">
 <span class="date-pick-icon" onclick="openPicker('to')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
@@ -283,15 +340,15 @@ button{
 <div class="field-row">
 <div class="field-icon" style="font-weight:800;font-size:18px;">₹</div>
 <div class="field-content">
-<label>Principal (₹)</label>
-<input type="number" id="principal" placeholder="Enter Principal Amount">
+<label data-i18n="label_principal">Principal (₹)</label>
+<input type="number" id="principal" placeholder="Enter Principal Amount" data-i18n-placeholder="placeholder_principal">
 </div>
 </div>
 
 <div class="field-row">
 <div class="field-icon" style="font-weight:800;font-size:16px;">%</div>
 <div class="field-content">
-<label>Rate (Monthly %)</label>
+<label data-i18n="label_rate">Rate (Monthly %)</label>
 <select id="rate" style="display:none;">
 <option value="1">1%</option>
 <option value="1.5">1.5%</option>
@@ -313,36 +370,36 @@ button{
 </div>
 </div>
 
-<button class="calc-btn" onclick="calculate()">🖩 CALCULATE</button>
-<button id="installBtn" style="display:none;background:#2e7d32;" onclick="installApp()">📲 App Install करें</button>
+<button class="calc-btn" onclick="calculate()">🖩 <span data-i18n="btn_calculate">CALCULATE</span></button>
+<button id="installBtn" style="display:none;background:#2e7d32;" onclick="installApp()">📲 <span data-i18n="install_btn">App Install करें</span></button>
 
 </div>
 
 <div class="feature-row" id="featureRow">
 <div class="feature-item">
 <div class="feature-circle" style="background:#e4edfb;">🛡️</div>
-<div class="feature-title">100% Secure</div>
-<div class="feature-sub">Your data is safe</div>
+<div class="feature-title" data-i18n="feat1_title">100% Secure</div>
+<div class="feature-sub" data-i18n="feat1_sub">Your data is safe</div>
 </div>
 <div class="feature-item">
 <div class="feature-circle" style="background:#e2f7e9;">⚡</div>
-<div class="feature-title">Instant Result</div>
-<div class="feature-sub">Calculate in seconds</div>
+<div class="feature-title" data-i18n="feat2_title">Instant Result</div>
+<div class="feature-sub" data-i18n="feat2_sub">Calculate in seconds</div>
 </div>
 <div class="feature-item">
 <div class="feature-circle" style="background:#f2e9fb;">📄</div>
-<div class="feature-title">Save & Share</div>
-<div class="feature-sub">PDF & WhatsApp</div>
+<div class="feature-title" data-i18n="feat3_title">Save & Share</div>
+<div class="feature-sub" data-i18n="feat3_sub">PDF & WhatsApp</div>
 </div>
 </div>
 
 <div class="result-card" id="resultCard" style="display:none;">
-<div class="result-card-header">📄 RESULT</div>
+<div class="result-card-header">📄 <span data-i18n="result_header">RESULT</span></div>
 <div class="result-body" id="result"></div>
 <div class="action-row">
-<button class="pdf-btn" onclick="downloadPDF()">📕 Download PDF</button>
-<button class="wa-btn" onclick="shareWhatsApp()">💬 WhatsApp Share</button>
-<button class="save-btn" onclick="saveHistory()">💾 Save History</button>
+<button class="pdf-btn" onclick="downloadPDF()">📕 <span data-i18n="btn_pdf">Download PDF</span></button>
+<button class="wa-btn" onclick="shareWhatsApp()">💬 <span data-i18n="btn_whatsapp">WhatsApp Share</span></button>
+<button class="save-btn" onclick="saveHistory()">💾 <span data-i18n="btn_savehistory">Save History</span></button>
 </div>
 </div>
 
@@ -350,8 +407,8 @@ button{
 
 <!-- ===== HISTORY PAGE ===== -->
 <div id="page-history" class="page">
-<div class="history-header">⟲ HISTORY</div>
-<div class="history-clear"><a onclick="clearHistory()">सारी History हटाएं</a></div>
+<div class="history-header">⟲ <span data-i18n="history_title">HISTORY</span></div>
+<div class="history-clear"><a onclick="clearHistory()" data-i18n="history_clear">सारी History हटाएं</a></div>
 <div class="history-list" id="historyList"></div>
 </div>
 
@@ -361,9 +418,9 @@ button{
 <div class="about-icon-circle">
 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
 </div>
-<h3>Interest Calculator <span class="pro-tag">Pro</span></h3>
+<h3><span data-i18n="about_title">Interest Calculator</span> <span class="pro-tag">Pro</span></h3>
 <div class="about-divider"></div>
-<p>
+<p data-i18n-html="about_desc">
 CK2026 Annual Compound Rule ke hisab se interest calculate karne ka tool.<br><br>
 Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par share karta hai, aur history save rakhta hai.
 </p>
@@ -371,15 +428,15 @@ Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par sh
 <div class="about-features">
 <div class="about-feature-item">
 <div class="about-feature-circle">📄</div>
-<div class="about-feature-label">Professional<br>PDF Report</div>
+<div class="about-feature-label" data-i18n-html="about_feat1">Professional<br>PDF Report</div>
 </div>
 <div class="about-feature-item">
 <div class="about-feature-circle">💬</div>
-<div class="about-feature-label">WhatsApp<br>par Share</div>
+<div class="about-feature-label" data-i18n-html="about_feat2">WhatsApp<br>par Share</div>
 </div>
 <div class="about-feature-item">
 <div class="about-feature-circle">🕒</div>
-<div class="about-feature-label">History<br>hamesha Save</div>
+<div class="about-feature-label" data-i18n-html="about_feat3">History<br>hamesha Save</div>
 </div>
 </div>
 <div class="about-hr"></div>
@@ -393,15 +450,19 @@ Yeh app aapke calculation ka professional PDF report banata hai, WhatsApp par sh
 <div class="bottom-nav">
 <div class="nav-item active" id="nav-calculator" onclick="showPage('calculator')">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="15"/></svg>
-Calculator
+<span data-i18n="nav_calculator">Calculator</span>
 </div>
 <div class="nav-item" id="nav-history" onclick="showPage('history')">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 16 14"/></svg>
-History
+<span data-i18n="nav_history">History</span>
+</div>
+<div class="nav-item" id="nav-mode" onclick="toggleInterestMode()">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+<span id="navModeLabel">Simple Interest</span>
 </div>
 <div class="nav-item" id="nav-about" onclick="showPage('about')">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
-About
+<span data-i18n="nav_about">About</span>
 </div>
 </div>
 
@@ -499,7 +560,7 @@ let p=parseFloat(document.getElementById("principal").value);
 let r=parseFloat(document.getElementById("rate").value);
 
 if(!fromValue || !toValue || !p){
-alert("कृपया सभी जानकारी भरें");
+alert(t('alert_fill_all','कृपया सभी जानकारी भरें'));
 return;
 }
 
@@ -507,7 +568,7 @@ let from=parseDDMMYYYY(fromValue);
 let to=parseDDMMYYYY(toValue);
 
 if(!from || !to){
-alert("कृपया From/To Date सही फॉर्मेट में भरें: DD-MM-YYYY (जैसे 15-03-2024)");
+alert(t('alert_invalid_date','कृपया From/To Date सही फॉर्मेट में भरें: DD-MM-YYYY (जैसे 15-03-2024)'));
 return;
 }
 
@@ -522,7 +583,16 @@ let principal = p;
 let totalInterest = 0;
 let yearlyData = [];
 
-// Annual compound
+if(interestMode==="simple"){
+// Simple Interest: interest is always calculated on the ORIGINAL principal (no compounding)
+for(let i=1;i<=years;i++){
+ let yearInterest = p * (r*12)/100;
+ totalInterest += yearInterest;
+ let newPrincipal = p + totalInterest;
+ yearlyData.push({year:i, principal:p, interest:yearInterest, newPrincipal:newPrincipal});
+}
+}else{
+// Compound Interest (CK2026 Annual Compound Rule)
 for(let i=1;i<=years;i++){
  let yearInterest = principal * (r*12)/100;
  let newPrincipal = principal + yearInterest;
@@ -530,18 +600,24 @@ for(let i=1;i<=years;i++){
  principal = newPrincipal;
  totalInterest += yearInterest;
 }
+}
 
 let monthInterest = 0;
 let dayInterest = 0;
-let basePrincipal = principal;
+let basePrincipal = (interestMode==="simple") ? p : principal;
 if(months>0){
  monthInterest = basePrincipal * r * months /100;
 }
 if(days>0){
  dayInterest = basePrincipal * r * (days/30)/100;
 }
-principal = basePrincipal + monthInterest + dayInterest;
-totalInterest += monthInterest + dayInterest;
+if(interestMode==="simple"){
+ totalInterest += monthInterest + dayInterest;
+ principal = p + totalInterest;
+}else{
+ principal = basePrincipal + monthInterest + dayInterest;
+ totalInterest += monthInterest + dayInterest;
+}
 let finalAmount = principal;
 
 let today = new Date();
@@ -551,6 +627,7 @@ let toDateFormatted = `${String(to.getDate()).padStart(2,'0')}-${String(to.getMo
 
 let calcDateStr = formatDateSlash(today);
 let calcTimeStr = formatTime12(today);
+let interestTypeLabel = (interestMode==="simple") ? "साधारण ब्याज" : "चक्रवृद्धि ब्याज";
 
 lastCalc={
 id:Date.now(),
@@ -564,7 +641,9 @@ years:years, months:months, days:days,
 principal:p, rate:r,
 yearlyData:yearlyData,
 monthInterest:monthInterest, dayInterest:dayInterest,
-totalInterest:totalInterest, finalAmount:finalAmount
+totalInterest:totalInterest, finalAmount:finalAmount,
+interestType:interestMode,
+interestTypeLabel:interestTypeLabel
 };
 
 let detailText = "";
@@ -582,6 +661,8 @@ Welcome, CHANDRAMOHAN SINGH
 Powered by CK2026
 
 रिपोर्ट दिनांक : ${reportDate}
+
+ब्याज का प्रकार : ${interestTypeLabel}
 
 ____________________________
 
@@ -604,13 +685,14 @@ ____________________________
 
 ____________________________
 
-Calculation Method
-CK2026 Annual Compound Rule`;
+गणना विधि
+${interestMode==="simple" ? "साधारण ब्याज (CK2026 नियम)" : "CK2026 वार्षिक चक्रवृद्धि नियम"}`;
 
 lastCalc.reportText = reportText;
 
 let resultHTML = `
 <div class="result-datetime"><span>Date: ${lastCalc.calcDate}</span><span>Time: ${lastCalc.calcTime}</span></div>
+<div class="result-type-badge">${interestMode==="simple" ? "➗" : "🧮"} ${interestTypeLabel}</div>
 <div class="result-section-title">--: ब्याज का विवरण :--</div>
 <div class="result-row"><span>मूलधन (₹)</span><b>${inr(p)}</b></div>
 <div class="result-row"><span>मासिक ब्याज दर</span><b>${r}%</b></div>
@@ -671,6 +753,7 @@ thead{display:table-header-group;}
 .ck-title{font-size:30px;font-weight:800;color:#ffffff;letter-spacing:1px;margin:0;line-height:1.1;}
 .ck-title span{font-weight:800;color:#e8b23d;}
 .ck-badge{background:#0a2647;border:1.5px solid #caa04a;color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap;}
+.ck-type-ribbon{text-align:center;background:#c9a227;color:#0a2647;font-weight:800;font-size:17px;letter-spacing:1.2px;padding:9px 10px;margin:0 14px;}
 .ck-body{padding:20px 30px 8px 30px;}
 .ck-welcome-box{border:1.5px solid #c9d6e8;border-radius:12px;display:flex;align-items:center;padding:14px 18px;margin-bottom:18px;}
 .ck-welcome-item{display:flex;align-items:center;gap:12px;flex:1;}
@@ -728,6 +811,8 @@ table.ck-table tr:last-child td{border-bottom:none;}
 <div class="ck-badge">Powered by CK2026</div>
 </div>
 
+<div class="ck-type-ribbon">${d.interestType==="simple" ? "➗ SIMPLE INTEREST" : "🧮 COMPOUND INTEREST"}</div>
+
 <div class="ck-body">
 
 <div class="ck-welcome-box">
@@ -768,7 +853,7 @@ ${iconCircle(ICONS.percent,28)}
 <div class="ck-divider-v"></div>
 <div class="ck-info-col">
 ${iconCircle(ICONS.calendar,28)}
-<div><div class="ck-info-label">गणना विधि</div><div class="ck-info-value" style="font-size:13px;">CK2026 Annual<br>Compound Rule</div></div>
+<div><div class="ck-info-label">गणना विधि</div><div class="ck-info-value" style="font-size:13px;">${d.interestType==="simple" ? "Simple Interest<br>(CK2026 Rule)" : "CK2026 Annual<br>Compound Rule"}</div></div>
 </div>
 </div>
 </div>
@@ -799,7 +884,7 @@ ${extraBoxHTML}
 
 <div class="ck-method">
 ${iconCircle(ICONS.shield,32)}
-<div><b>Calculation Method</b><br>CK2026 Annual Compound Rule</div>
+<div><b>Calculation Method</b><br>${d.interestType==="simple" ? "Simple Interest (CK2026 Rule)" : "CK2026 Annual Compound Rule"}</div>
 </div>
 <div class="ck-method-divider">${SWIRL}</div>
 
@@ -833,7 +918,7 @@ function downloadPDF(dataOverride){
 let d = dataOverride || lastCalc;
 
 if(!d){
-alert("कृपया पहले Calculate बटन दबाएं");
+alert(t('alert_calculate_first','कृपया पहले Calculate बटन दबाएं'));
 return;
 }
 
@@ -841,7 +926,7 @@ let r = buildReportHtml(d);
 
 html2pdf().set(r.opt).from(r.html, 'string').save().catch(function(err){
 console.log("PDF error:",err);
-alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
+alert(t('alert_pdf_error','PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।'));
 });
 }
 
@@ -850,7 +935,7 @@ function shareWhatsApp(dataOverride){
 let d = dataOverride || lastCalc;
 
 if(!d){
-alert("कृपया पहले Calculate बटन दबाएं");
+alert(t('alert_calculate_first','कृपया पहले Calculate बटन दबाएं'));
 return;
 }
 
@@ -879,13 +964,13 @@ document.body.appendChild(a);
 a.click();
 document.body.removeChild(a);
 setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 3000);
-alert("आपका PDF डाउनलोड हो गया है। कृपया WhatsApp खोलें और डाउनलोड हुई PDF फाइल को अटैच करके भेजें।");
+alert(t('alert_wa_fallback','आपका PDF डाउनलोड हो गया है। कृपया WhatsApp खोलें और डाउनलोड हुई PDF फाइल को अटैच करके भेजें।'));
 window.open("https://wa.me/?text="+encodeURIComponent(waText), "_blank");
 }
 
 }).catch(function(err){
 console.log("PDF generation error:", err);
-alert("PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।");
+alert(t('alert_pdf_error','PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।'));
 });
 }
 
@@ -900,18 +985,18 @@ return [];
 
 function saveHistory(){
 if(!lastCalc){
-alert("कृपया पहले Calculate बटन दबाएं");
+alert(t('alert_calculate_first','कृपया पहले Calculate बटन दबाएं'));
 return;
 }
 let list = getHistoryList();
 list.unshift(lastCalc);
 if(list.length>30) list = list.slice(0,30);
 localStorage.setItem("ck2026_history_list", JSON.stringify(list));
-alert("History Save हो गया!");
+alert(t('alert_history_saved','History Save हो गया!'));
 }
 
 function clearHistory(){
-if(confirm("क्या आप सारी History हटाना चाहते हैं?")){
+if(confirm(t('alert_clear_confirm','क्या आप सारी History हटाना चाहते हैं?'))){
 localStorage.removeItem("ck2026_history_list");
 renderHistory();
 }
@@ -936,18 +1021,21 @@ function renderHistory(){
 let list = getHistoryList();
 let container = document.getElementById("historyList");
 if(list.length===0){
-container.innerHTML = `<div class="history-empty">अभी तक कोई History save नहीं हुई है।</div>`;
+container.innerHTML = `<div class="history-empty">${t('history_empty','अभी तक कोई History save नहीं हुई है।')}</div>`;
 return;
 }
 container.innerHTML = list.map(function(e){
+let typeLabel = e.interestTypeLabel || "चक्रवृद्धि ब्याज";
+let typeIcon = e.interestType==="simple" ? "➗" : "🧮";
 return `
 <div class="history-card">
 <div class="history-card-main">
 <div class="history-card-top"><span>📅 ${e.calcDate||e.reportDate}</span><span>🕒 ${e.calcTime||""}</span></div>
-<div class="history-row"><span>From: <b>${e.fromDateFormatted}</b></span><span>To: <b>${e.toDateFormatted}</b></span></div>
-<div class="history-row"><span>Principal: <b>₹${inr(e.principal)}</b></span><span>Rate: <b>${e.rate}%</b></span></div>
-<div class="history-row"><span>समय: <b>${e.years} साल ${e.months} महिना ${e.days} दिन</b></span></div>
-<div class="history-row"><span>ब्याज: <b>₹${inr(e.totalInterest)}</b></span><span>कुल राशि: <b>₹${inr(e.finalAmount)}</b></span></div>
+<div class="history-type-tag">${typeIcon} ${typeLabel}</div>
+<div class="history-row"><span>${t('hist_from','From')}: <b>${e.fromDateFormatted}</b></span><span>${t('hist_to','To')}: <b>${e.toDateFormatted}</b></span></div>
+<div class="history-row"><span>${t('hist_principal','Principal')}: <b>₹${inr(e.principal)}</b></span><span>${t('hist_rate','Rate')}: <b>${e.rate}%</b></span></div>
+<div class="history-row"><span>${t('hist_time','समय')}: <b>${e.years} ${t('hist_yr','साल')} ${e.months} ${t('hist_mo','महिना')} ${e.days} ${t('hist_dy','दिन')}</b></span></div>
+<div class="history-row"><span>${t('hist_interest','ब्याज')}: <b>₹${inr(e.totalInterest)}</b></span><span>${t('hist_totalamt','कुल राशि')}: <b>₹${inr(e.finalAmount)}</b></span></div>
 </div>
 <div class="history-actions">
 <button class="history-icon-btn" onclick="downloadPDFFromHistory(${e.id})">PDF</button>
@@ -987,35 +1075,261 @@ if(lastCalc){
 downloadPDF();
 }else{
 showPage("calculator");
-alert("पहले From Date, To Date, Principal aur Rate भरकर Calculate बटन दबाएं, फिर PDF/WhatsApp से डाउनलोड कर सकते हैं।");
+alert(t('alert_download_first','पहले From Date, To Date, Principal aur Rate भरकर Calculate बटन दबाएं, फिर PDF/WhatsApp से डाउनलोड कर सकते हैं।'));
 }
 }
+const APP_URL = "https://chandramohan2026.github.io/Interest-calculatar/";
+
 function rateWebsite(){
 closeDrawer();
-let text = "मुझे Interest Calculator Pro app बहुत पसंद आया! आप भी इसे इस्तेमाल करें: " + window.location.href;
+let text = "मुझे Interest Calculator Pro app बहुत पसंद आया! आप भी इसे इस्तेमाल करें: " + APP_URL;
 window.open("https://wa.me/?text="+encodeURIComponent(text), "_blank");
 }
 
-// ---- Dark / Light mode toggle (default = light mint) ----
-function applyTheme(mode){
-if(mode==="dark"){
-document.body.classList.add("dark-mode");
-}else{
-document.body.classList.remove("dark-mode");
+// ---- Simple / Compound Interest mode toggle ----
+let interestMode = "compound";
+function updateModeUI(){
+let isSimple = interestMode==="simple";
+let badgeIcon = document.getElementById("modeBadgeIcon");
+let badgeText = document.getElementById("modeBadgeText");
+let menuLabel = document.getElementById("modeMenuLabel");
+let navLabel = document.getElementById("navModeLabel");
+let currentTypeLabel = isSimple ? t('mode_label_simple','Simple Interest') : t('mode_label_compound','Compound Interest');
+let switchToLabel = isSimple ? t('mode_label_compound','Compound Interest') : t('mode_label_simple','Simple Interest');
+if(badgeIcon) badgeIcon.textContent = isSimple ? "➗" : "🧮";
+if(badgeText) badgeText.textContent = currentTypeLabel + " " + t('mode_calc_suffix','Calculator');
+if(menuLabel) menuLabel.textContent = switchToLabel;
+if(navLabel) navLabel.textContent = switchToLabel;
 }
-let metaTheme = document.querySelector('meta[name="theme-color"]');
-if(metaTheme) metaTheme.setAttribute("content", mode==="dark" ? "#060a16" : "#eefaf3");
-localStorage.setItem("ck2026_theme", mode);
-}
-function toggleTheme(){
-let current = localStorage.getItem("ck2026_theme")==="dark" ? "dark" : "light";
-let next = current==="dark" ? "light" : "dark";
-applyTheme(next);
+function toggleInterestMode(){
+interestMode = (interestMode==="simple") ? "compound" : "simple";
+localStorage.setItem("ck2026_mode", interestMode);
 closeDrawer();
+location.reload();
 }
 (function(){
-let saved = localStorage.getItem("ck2026_theme");
-if(saved==="dark") applyTheme("dark");
+let savedMode = localStorage.getItem("ck2026_mode");
+if(savedMode==="simple" || savedMode==="compound") interestMode = savedMode;
+})();
+
+// ---- App Share ----
+function appShare(){
+closeDrawer();
+let pageUrl = APP_URL;
+let shareText = "Interest Calculator Pro - Smart Calculations, Better Decisions\n" + pageUrl;
+let shareData = {
+title: "Interest Calculator Pro",
+text: shareText,
+url: pageUrl
+};
+if(navigator.share){
+navigator.share(shareData).catch(function(err){ console.log("Share cancelled:", err); });
+}else{
+window.open("https://wa.me/?text="+encodeURIComponent(shareText), "_blank");
+}
+}
+
+// ---- Terms & Conditions modal ----
+function openTerms(){
+closeDrawer();
+document.getElementById("termsOverlay").classList.add("open");
+}
+function closeTerms(){
+document.getElementById("termsOverlay").classList.remove("open");
+}
+
+// ---- Language toggle (Hindi / English) ----
+const translations = {
+en:{
+subtitle:"Advanced Financial Planning & Analysis",
+welcome_greeting:"Welcome back,",
+welcome_tagline:"Smart Calculations, Better Decisions",
+label_from:"From Date",
+label_to:"To Date",
+label_principal:"Principal (₹)",
+label_rate:"Rate (Monthly %)",
+btn_calculate:"CALCULATE",
+feat1_title:"100% Secure",
+feat1_sub:"Your data is safe",
+feat2_title:"Instant Result",
+feat2_sub:"Calculate in seconds",
+feat3_title:"Save & Share",
+feat3_sub:"PDF & WhatsApp",
+history_title:"HISTORY",
+history_clear:"Clear All History",
+history_empty:"No history saved yet.",
+about_title:"Interest Calculator",
+about_desc:"Calculates interest as per the CK2026 Annual Compound Rule.<br><br>This app generates a professional PDF report of your calculation, lets you share it on WhatsApp, and always saves your history.",
+about_feat1:"Professional<br>PDF Report",
+about_feat2:"WhatsApp<br>Share",
+about_feat3:"History<br>Always Saved",
+nav_calculator:"Calculator",
+nav_history:"History",
+nav_about:"About",
+menu_dashboard:"Dashboard",
+menu_calculator:"Interest Calculator",
+menu_history:"Calculation History",
+menu_reports:"Reports",
+menu_download:"Download (PDF / WhatsApp)",
+menu_language:"Hindi / English",
+menu_theme:"Dark / Light Mode",
+menu_appshare:"App Share",
+menu_rate:"Rate Website",
+menu_terms:"Terms & Conditions",
+menu_aboutdev:"About Developer",
+result_header:"RESULT",
+btn_pdf:"Download PDF",
+btn_whatsapp:"WhatsApp Share",
+btn_savehistory:"Save History",
+install_btn:"Install App",
+mode_label_simple:"Simple Interest",
+mode_label_compound:"Compound Interest",
+mode_calc_suffix:"Calculator",
+hist_from:"From",
+hist_to:"To",
+hist_principal:"Principal",
+hist_rate:"Rate",
+hist_time:"Time",
+hist_yr:"yr",
+hist_mo:"mo",
+hist_dy:"days",
+hist_interest:"Interest",
+hist_totalamt:"Total Amount",
+alert_fill_all:"Please fill in all the details",
+alert_invalid_date:"Please enter From/To Date in correct format: DD-MM-YYYY (e.g. 15-03-2024)",
+alert_calculate_first:"Please press the Calculate button first",
+alert_pdf_error:"There was a problem generating the PDF, please try again.",
+alert_history_saved:"History saved!",
+alert_clear_confirm:"Do you want to delete all history?",
+alert_wa_fallback:"Your PDF has been downloaded. Please open WhatsApp and attach the downloaded PDF file to send.",
+alert_download_first:"Please fill From Date, To Date, Principal and Rate and press Calculate, then you can download via PDF/WhatsApp.",
+alert_install_done:"This app is already installed, or your browser does not support install.",
+terms_header:"📋 Terms & Conditions",
+placeholder_principal:"Enter Principal Amount",
+terms_body:"<p class=\"modal-effective\">Effective Date: 09 July 2026</p><p>Welcome to Interest Calculator Pro. By using this website, you agree to the following Terms &amp; Conditions.</p><h4>1. Information Only</h4><p>This website provides Compound Interest calculations for estimation purposes only. Results are generated using the values entered by the user and standard calculation formulas. Actual values may differ depending on the policies, fees, or calculation methods used by banks or financial institutions.</p><h4>2. Accuracy</h4><p>We strive to provide accurate and reliable calculations. However, we do not guarantee that every result will be completely error-free.</p><h4>3. User Responsibility</h4><p>Users are responsible for verifying all calculation results before making any financial, investment, or business decisions.</p><h4>4. Privacy</h4><p>We respect your privacy. Information entered into the calculator is used only for calculations and is not sold to third parties.</p><h4>5. No Financial Advice</h4><p>This website is designed for informational purposes only and does not provide legal, financial, tax, or investment advice.</p><h4>6. Website Updates</h4><p>We may update, improve, or modify this website, its features, or these Terms &amp; Conditions at any time without prior notice.</p><h4>7. Copyright</h4><p>The design, logo, content, and branding of Interest Calculator Pro are protected by copyright laws. Unauthorized copying, modification, or redistribution is prohibited.</p>"
+},
+hi:{
+subtitle:"उन्नत वित्तीय योजना और विश्लेषण",
+welcome_greeting:"वापसी पर स्वागत है,",
+welcome_tagline:"स्मार्ट कैलकुलेशन, बेहतर फैसले",
+label_from:"आरंभ तिथि",
+label_to:"अंतिम तिथि",
+label_principal:"मूलधन (₹)",
+label_rate:"ब्याज दर (मासिक %)",
+btn_calculate:"गणना करें",
+feat1_title:"100% सुरक्षित",
+feat1_sub:"आपका डेटा सुरक्षित है",
+feat2_title:"तुरंत परिणाम",
+feat2_sub:"सेकंडों में गणना करें",
+feat3_title:"सेव और शेयर करें",
+feat3_sub:"PDF और WhatsApp",
+history_title:"इतिहास",
+history_clear:"सारी History हटाएं",
+history_empty:"अभी तक कोई History save नहीं हुई है।",
+about_title:"इंटरेस्ट कैलकुलेटर",
+about_desc:"यह टूल CK2026 वार्षिक चक्रवृद्धि नियम के अनुसार ब्याज की गणना करता है।<br><br>यह ऐप आपकी गणना की एक प्रोफेशनल PDF रिपोर्ट बनाता है, उसे WhatsApp पर शेयर करने देता है, और आपकी History हमेशा सेव रखता है.",
+about_feat1:"प्रोफेशनल<br>PDF रिपोर्ट",
+about_feat2:"WhatsApp पर<br>शेयर करें",
+about_feat3:"History हमेशा<br>सेव रहती है",
+nav_calculator:"कैलकुलेटर",
+nav_history:"इतिहास",
+nav_about:"जानकारी",
+menu_dashboard:"डैशबोर्ड",
+menu_calculator:"इंटरेस्ट कैलकुलेटर",
+menu_history:"कैलकुलेशन हिस्ट्री",
+menu_reports:"रिपोर्ट्स",
+menu_download:"डाउनलोड (PDF / WhatsApp)",
+menu_language:"हिंदी / English",
+menu_theme:"डार्क / लाइट मोड",
+menu_appshare:"ऐप शेयर करें",
+menu_rate:"वेबसाइट को रेट करें",
+menu_terms:"नियम एवं शर्तें",
+menu_aboutdev:"डेवलपर के बारे में",
+result_header:"परिणाम",
+btn_pdf:"PDF डाउनलोड करें",
+btn_whatsapp:"WhatsApp शेयर करें",
+btn_savehistory:"History सेव करें",
+install_btn:"App Install करें",
+mode_label_simple:"साधारण ब्याज",
+mode_label_compound:"चक्रवृद्धि ब्याज",
+mode_calc_suffix:"कैलकुलेटर",
+hist_from:"आरंभ तिथि",
+hist_to:"अंतिम तिथि",
+hist_principal:"मूलधन",
+hist_rate:"दर",
+hist_time:"समय",
+hist_yr:"साल",
+hist_mo:"महिना",
+hist_dy:"दिन",
+hist_interest:"ब्याज",
+hist_totalamt:"कुल राशि",
+alert_fill_all:"कृपया सभी जानकारी भरें",
+alert_invalid_date:"कृपया From/To Date सही फॉर्मेट में भरें: DD-MM-YYYY (जैसे 15-03-2024)",
+alert_calculate_first:"कृपया पहले Calculate बटन दबाएं",
+alert_pdf_error:"PDF बनाने में समस्या आई, कृपया दोबारा कोशिश करें।",
+alert_history_saved:"History Save हो गया!",
+alert_clear_confirm:"क्या आप सारी History हटाना चाहते हैं?",
+alert_wa_fallback:"आपका PDF डाउनलोड हो गया है। कृपया WhatsApp खोलें और डाउनलोड हुई PDF फाइल को अटैच करके भेजें।",
+alert_download_first:"पहले From Date, To Date, मूलधन और दर भरकर Calculate बटन दबाएं, फिर PDF/WhatsApp से डाउनलोड कर सकते हैं।",
+alert_install_done:"यह app पहले से install हो चुका है, या आपका browser install support नहीं करता।",
+terms_header:"📋 नियम एवं शर्तें",
+placeholder_principal:"मूलधन राशि दर्ज करें",
+terms_body:"<p class=\"modal-effective\">प्रभावी तिथि: 09 जुलाई 2026</p><p>Interest Calculator Pro में आपका स्वागत है। इस वेबसाइट का उपयोग करके, आप निम्नलिखित नियम एवं शर्तों से सहमत होते हैं।</p><h4>1. केवल जानकारी हेतु</h4><p>यह वेबसाइट केवल अनुमान के उद्देश्य से ब्याज की गणना प्रदान करती है। परिणाम उपयोगकर्ता द्वारा दर्ज किए गए मूल्यों और मानक गणना सूत्रों का उपयोग करके तैयार किए जाते हैं। बैंकों या वित्तीय संस्थानों की नीतियों, शुल्कों या गणना विधियों के आधार पर वास्तविक मूल्य भिन्न हो सकते हैं।</p><h4>2. सटीकता</h4><p>हम सटीक और विश्वसनीय गणना प्रदान करने का प्रयास करते हैं। हालांकि, हम यह गारंटी नहीं देते कि हर परिणाम पूरी तरह से त्रुटि-रहित होगा।</p><h4>3. उपयोगकर्ता की जिम्मेदारी</h4><p>कोई भी वित्तीय, निवेश या व्यावसायिक निर्णय लेने से पहले सभी गणना परिणामों को सत्यापित करने की जिम्मेदारी उपयोगकर्ता की है।</p><h4>4. गोपनीयता</h4><p>हम आपकी गोपनीयता का सम्मान करते हैं। कैलकुलेटर में दर्ज की गई जानकारी केवल गणना के लिए उपयोग की जाती है और तीसरे पक्ष को नहीं बेची जाती।</p><h4>5. कोई वित्तीय सलाह नहीं</h4><p>यह वेबसाइट केवल जानकारी के उद्देश्य से बनाई गई है और कोई कानूनी, वित्तीय, कर या निवेश सलाह प्रदान नहीं करती।</p><h4>6. वेबसाइट अपडेट</h4><p>हम बिना किसी पूर्व सूचना के इस वेबसाइट, इसकी सुविधाओं या इन नियम एवं शर्तों को कभी भी अपडेट, सुधार या संशोधित कर सकते हैं।</p><h4>7. कॉपीराइट</h4><p>Interest Calculator Pro का डिज़ाइन, लोगो, सामग्री और ब्रांडिंग कॉपीराइट कानूनों द्वारा संरक्षित हैं। अनधिकृत नकल, संशोधन या पुनर्वितरण निषिद्ध है।</p>"
+}
+};
+let currentLang = null;
+
+function t(key, fallback){
+if(currentLang && translations[currentLang] && translations[currentLang][key]!==undefined){
+return translations[currentLang][key];
+}
+return fallback;
+}
+
+function applyLanguage(lang){
+document.querySelectorAll('[data-i18n]').forEach(function(el){
+let key = el.getAttribute('data-i18n');
+if(translations[lang] && translations[lang][key]!==undefined){
+el.textContent = translations[lang][key];
+}
+});
+document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+let key = el.getAttribute('data-i18n-html');
+if(translations[lang] && translations[lang][key]!==undefined){
+el.innerHTML = translations[lang][key];
+}
+});
+document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+let key = el.getAttribute('data-i18n-placeholder');
+if(translations[lang] && translations[lang][key]!==undefined){
+el.setAttribute('placeholder', translations[lang][key]);
+}
+});
+currentLang = lang;
+localStorage.setItem('ck2026_lang', lang);
+if(document.getElementById('page-history').classList.contains('active')) renderHistory();
+}
+function toggleLanguage(){
+let next = (currentLang==='hi') ? 'en' : 'hi';
+localStorage.setItem('ck2026_lang', next);
+closeDrawer();
+location.reload();
+}
+(function(){
+let savedLang = localStorage.getItem('ck2026_lang');
+if(savedLang==='hi' || savedLang==='en') applyLanguage(savedLang);
+updateModeUI();
+})();
+
+// ---- Dark mode only (light mode removed) ----
+function applyTheme(mode){
+document.body.classList.add("dark-mode");
+let metaTheme = document.querySelector('meta[name="theme-color"]');
+if(metaTheme) metaTheme.setAttribute("content", "#060a16");
+localStorage.setItem("ck2026_theme", "dark");
+}
+(function(){
+applyTheme("dark");
 })();
 
 // ---- PWA: service worker registration + install prompt ----
@@ -1038,7 +1352,7 @@ if(btn) btn.style.display="block";
 
 function installApp(){
 if(!deferredInstallPrompt){
-alert("यह app पहले से install हो चुका है, या आपका browser install support नहीं करता।");
+alert(t('alert_install_done','यह app पहले से install हो चुका है, या आपका browser install support नहीं करता।'));
 return;
 }
 deferredInstallPrompt.prompt();
